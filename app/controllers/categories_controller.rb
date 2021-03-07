@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-
   def index
     @categories = Category.all
   end
@@ -18,7 +17,8 @@ class CategoriesController < ApplicationController
     end
   end
 
-private
+  private
+
   def category_params
     params.require(:category).permit(:name)
   end
