@@ -1,0 +1,6 @@
+<h2>Edit <%= @category.name %> </h2>
+
+<%= simple_form_for (@category) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit 'Update', class: 'btn btn-flat' %>
+<% end %>
