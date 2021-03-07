@@ -1,3 +1,7 @@
 <% @restaurants.each do |restaurant| %>
-<h1><%= restaurant.name %></h1>
+<h1>Restaurant name: <%= restaurant.name %></h1>
+<h2> User email: <%= current_user.email %> </h2>
+<h2> Username: <%= current_user.username %> </h2>
+<h2> Restaurant ID: <%= current_user.restaurant_id %> </h2>
+
 <% end %>
