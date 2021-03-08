@@ -1,9 +1,11 @@
 class CategoriesController < ApplicationController
-  
+
   before_action :set_category, only: [:destroy, :edit, :update]
 
   def index
     @categories = Category.all
+    @preferences = Preference.all
+     @category = Category.find(params[:format])
   end
 
   def new
