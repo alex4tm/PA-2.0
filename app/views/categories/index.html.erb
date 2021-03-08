@@ -1,35 +1,37 @@
 <div class="container">
   <% @categories.each do |category| %>
   <div class="white-card">
-    <h2>Category: <%= category.name %></h2>
+
+
+    <h2>Category: <%= category.name.capitalize %></h2>
     <% category.preferences.each do |preference| %>
-      <h5>Preference: <%= preference.name %> : <%= preference.description %></h5>
-
-
-      <div class="d-flex">
-        <%= link_to 'edit preference',
-        edit_category_preference_path(category, preference),
-        method: 'get',
-        class: 'btn btn-xs btn-warning m-2 p-2' %>
-        <%= link_to 'delete preference',
-        category_preference_path(category, preference),
-        method: 'delete',
-        data: { confirm: "Are you sure you want to delete this preference?" },
-        class: 'btn btn-xs btn-danger m-2 p-2' %>
+      <div class="preferences">
+        <h5> <i class="fa fa-heart mx-1"></i> <%= preference.name.capitalize %>: <%= preference.description.capitalize %></h5>
+          <div class="ml-3">
+          <%= link_to '',
+          edit_category_preference_path(category, preference),
+          method: 'get',
+          class: 'fa fa-edit' %>
+          <%= link_to '',
+          category_preference_path(category, preference),
+          method: 'delete',
+          data: { confirm: "Are you sure you want to delete this preference?" },
+          class: 'fa fa-trash' %>
+          </div>
       </div>
     <% end %>
-    <div class="d-flex">
+    <div class="crud">
       <%= link_to '',
       new_category_preference_path(category),
-      class: "fas fa-plus" %>
+      class: "fas fa-plus crud-items" %>
       <%= link_to '',
       edit_category_path(category),
-      class: 'fa fa-edit mx-3 text-decoration-none ' %>
+      class: 'fa fa-edit crud-items' %>
       <%= link_to '',
       category_path(category),
-      method: '',
+      method: 'delete',
       data: { confirm: "Are you sure you want to delete this category?" },
-      class: 'fa fa-trash' %>
+      class: 'fa fa-trash crud-items' %>
     </div>
   </div>
   <% end %>

@@ -3,4 +3,49 @@
   padding: 16px;
   margin: 32px 10px;
   box-shadow: 3px 4px 10px 2px #00000014;
+  position: relative;
+  height: auto;
+}
+
+.crud {
+position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 10px 10px;
+}
+
+.crud-items {
+  margin: 0px 15px;
+  color: gray;
+}
+
+.crud-items:hover {
+  text-decoration: none;
+}
+
+.preferences {
+display: flex;
+flex-wrap: wrap;
+padding: 10px;
+}
+
+.fa-edit {
+  color: lightblue;
+}
+
+.fa-trash {
+  color: #e86f6f;
+}
+
+.fa-plus {
+  color: #2a91b3;
+}
+
+.fa-heart {
+  color: #88c4e8f7;
 }
