@@ -3,18 +3,20 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:destroy, :edit, :update]
 
   def index
-    @categories = Category.all
-    @preferences = Preference.all
+    @categories = policy_scope(Category).order(created_at: :desc)
 
+    @preferences = Preference.all
   end
 
   def new
     @category = Category.new
+    authorize @category
   end
 
   def create
     @category = Category.new(category_params)
     @category.user = current_user
+    authorize @category
     if @category.save
       redirect_to categories_path
     else
@@ -23,16 +25,19 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+    authorize @category
   end
 
   def update
     @category.update(category_params)
+    authorize @category
 
     redirect_to categories_path(@category)
   end
 
   def destroy
     @category.destroy
+    authorize @category
     redirect_to categories_path
   end
 
