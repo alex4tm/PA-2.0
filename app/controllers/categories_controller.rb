@@ -4,6 +4,8 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = policy_scope(Category).order(created_at: :desc)
+
+    @preferences = Preference.all
   end
 
   def new
@@ -16,7 +18,7 @@ class CategoriesController < ApplicationController
     @category.user = current_user
     authorize @category
     if @category.save
-      redirect_to categories_path(@category)
+      redirect_to categories_path
     else
       render :new
     end
