@@ -1,9 +1,17 @@
 class PreferencesController < ApplicationController
-before_action :set_preference, only: [:create, :update, :destroy, :edit]
+before_action :set_preference, only: [:update, :destroy, :edit]
+
+  def new
+    @category = Category.find(params[:category_id])
+    @preference = Preference.new
+    authorize @preference
+  end
 
   def create
-    @preference = Preference.new(reference_params)
-    @preference.user = current_user
+    @preference = Preference.new(preference_params)
+    @category = Category.find(params[:category_id])
+    @preference.category = @category
+    authorize @preference
     if @preference.save
       redirect_to categories_path
     else

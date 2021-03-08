@@ -1,0 +1,7 @@
+
+
+<%= simple_form_for [@category, @preference] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.submit 'Create', class: 'btn btn-flat' %>
+<% end %>
