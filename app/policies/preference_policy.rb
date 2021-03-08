@@ -1,4 +1,4 @@
-class CategoryPolicy < ApplicationPolicy
+class PreferencePolicy < ApplicationPolicy
   class Scope < Scope
     # policy scope gives you all thhis items eg. categories.all
     def resolve
@@ -9,7 +9,11 @@ class CategoryPolicy < ApplicationPolicy
   # copy these from application_policy.rb and set to true first
   # once you have set up all applications set to FALSE specific actions
   def index?
-    record.user == user
+    true
+  end
+
+  def show?
+    true
   end
 
   def create?

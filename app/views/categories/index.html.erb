@@ -1,4 +1,6 @@
 <div class="container">
+
+  <% if policy(restaurant).index? %>
   <% @categories.each do |category| %>
     <h2>Category: <%= category.name %></h2>
     <% category.preferences.each do |preference| %>
@@ -27,6 +29,7 @@
         class: 'btn btn-xs btn-danger m-2 p-2 rounder' %>
       </div>
     <% end %>
+  <% end %>
   <% end %>
 </div>
 

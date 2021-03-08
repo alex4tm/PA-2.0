@@ -3,6 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_one :restaurant, dependent: :destroy
+  belongs_to :restaurant, optional: true
   has_many :bookings
+
+  def restaurant_owner?
+    self.restaurant.present?
+  end
 end
