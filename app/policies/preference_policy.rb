@@ -9,7 +9,6 @@ class PreferencePolicy < ApplicationPolicy
   # copy these from application_policy.rb and set to true first
   # once you have set up all applications set to FALSE specific actions
 
-
   def create?
     !user.restaurant_owner?
   end
@@ -19,7 +18,7 @@ class PreferencePolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    record.category.user == user
   end
 
   def edit?

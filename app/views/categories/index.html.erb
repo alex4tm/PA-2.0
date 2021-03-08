@@ -1,6 +1,6 @@
 <div class="container">
   <% @categories.each do |category| %>
-  <div class="col12">
+  <div class="white-card">
     <h2>Category: <%= category.name %></h2>
     <% category.preferences.each do |preference| %>
       <h5>Preference: <%= preference.name %> : <%= preference.description %></h5>
@@ -18,21 +18,19 @@
         class: 'btn btn-xs btn-danger m-2 p-2' %>
       </div>
     <% end %>
-      <div class="d-flex">
-        <%= link_to 'add preference',
-        new_category_preference_path(category),
-        class: 'btn btn-xs btn-info m-2 p-2' %>
-        <%= link_to 'edit category',
-        edit_category_path(category),
-        class: 'btn btn-xs btn-warning m-2 p-2 rounder' %>
-        <%= link_to 'delete category',
-        category_path(category),
-        method: 'delete',
-        data: { confirm: "Are you sure you want to delete this category?" },
-        class: 'btn btn-xs btn-danger m-2 p-2 rounder' %>
-      </div>
-  <% end %>
-
-
+    <div class="d-flex">
+      <%= link_to '',
+      new_category_preference_path(category),
+      class: "fas fa-plus" %>
+      <%= link_to '',
+      edit_category_path(category),
+      class: 'fa fa-edit mx-3 text-decoration-none ' %>
+      <%= link_to '',
+      category_path(category),
+      method: '',
+      data: { confirm: "Are you sure you want to delete this category?" },
+      class: 'fa fa-trash' %>
+    </div>
   </div>
+  <% end %>
 </div>
