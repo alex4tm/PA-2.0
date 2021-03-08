@@ -2,22 +2,16 @@ class PreferencePolicy < ApplicationPolicy
   class Scope < Scope
     # policy scope gives you all thhis items eg. categories.all
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
 
   # copy these from application_policy.rb and set to true first
   # once you have set up all applications set to FALSE specific actions
-  def index?
-    true
-  end
 
-  def show?
-    true
-  end
 
   def create?
-    true
+    !user.restaurant_owner?
   end
 
   def new?

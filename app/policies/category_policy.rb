@@ -2,18 +2,15 @@ class CategoryPolicy < ApplicationPolicy
   class Scope < Scope
     # policy scope gives you all thhis items eg. categories.all
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
 
   # copy these from application_policy.rb and set to true first
   # once you have set up all applications set to FALSE specific actions
-  def index?
-    record.user == user
-  end
 
   def create?
-    true
+    !user.restaurant_owner?
   end
 
   def new?
@@ -21,7 +18,7 @@ class CategoryPolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    record.user == user
   end
 
   def edit?
@@ -29,6 +26,6 @@ class CategoryPolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
+    update?
   end
 end
