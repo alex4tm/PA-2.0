@@ -21,16 +21,19 @@ before_action :set_preference, only: [:update, :destroy, :edit]
 
   def edit
     @category = Category.find(params[:category_id])
+    authorize @preference
   end
 
   def update
     @preference.update(preference_params)
+    authorize @preference
 
     redirect_to categories_path
   end
 
   def destroy
     @preference.destroy
+    authorize @preference
     redirect_to categories_path
   end
 
