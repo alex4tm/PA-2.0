@@ -1,26 +1,26 @@
 class BookingsController < ApplicationController
   before_action :set_restaurant_id, only: [:new, :create]
 
-
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking)
   end
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.restaurant = @restaurant
     @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to restaurant_bookings_path
-    # else
-    #   render :new
+    else
+      render :new
     end
   end
-
 
   private
 
