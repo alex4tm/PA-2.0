@@ -1,21 +1,26 @@
 class RestaurantsController < ApplicationController
-  def index
+  # def index
 
-    @restaurants = policy_scope(Restaurant).order(created_at: :desc)
-  end
+  #   @restaurants = policy_scope(Restaurant).order(created_at: :desc)
+  # end
 
-  def new
-    @restaurant = Restaurant.new
+  # def new
+  #   @restaurant = Restaurant.new
+  #   authorize @restaurant
+  # end
+
+  # def create
+  #   @user = User.first
+  #   @restaurant = Restaurant.new(restaurant_params)
+  #   @user.restaurant_id = @restaurant
+  #   if @restaurant.save
+  #     redirect_to restaurants_path
+  #   end
+  # end
+
+  def show
+    @restaurant = Restaurant.find(params[:id])
     authorize @restaurant
-  end
-
-  def create
-    @user = User.first
-    @restaurant = Restaurant.new(restaurant_params)
-    @user.restaurant_id = @restaurant
-    if @restaurant.save
-      redirect_to restaurants_path
-    end
   end
 
   private
