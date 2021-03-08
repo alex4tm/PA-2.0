@@ -1,10 +1,12 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
+
+    @restaurants = policy_scope(Restaurant).order(created_at: :desc)
   end
 
   def new
     @restaurant = Restaurant.new
+    authorize @restaurant
   end
 
   def create
