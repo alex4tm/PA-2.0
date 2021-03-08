@@ -1,32 +1,32 @@
 <div class="container">
   <% @categories.each do |category| %>
-  <h2>Category: <%= category.name %></h2>
-  <% category.preferences.each do |preference| %>
-  <h5>Preference: <%= preference.name %> : <%= preference.description %></h5>
-  <div class="d-flex">
-    <%= link_to 'edit preference',
-    category_preference_path(@category, preference),
-    method: 'patch',
-    class: 'btn btn-xs btn-warning m-2 p-2' %>
-    <%= link_to 'delete preference',
-    category_preference_path(@category, preference),
-    method: 'delete',
-    data: { confirm: "Are you sure you want to delete this preference?" },
-    class: 'btn btn-xs btn-danger m-2 p-2' %>
-  </div>
-  <% end %>
-  <% if current_user == category.user %>
-  <div class="d-flex">
-    <%= link_to 'edit category',
-    edit_category_path(category),
-    class: 'btn btn-xs btn-warning m-2 p-2 rounder' %>
-    <%= link_to 'delete category',
-    category_path(category),
-    method: 'delete',
-    data: { confirm: "Are you sure you want to delete this category?" },
-    class: 'btn btn-xs btn-danger m-2 p-2 rounder' %>
-  </div>
-  <% end %>
+    <h2>Category: <%= category.name %></h2>
+    <% category.preferences.each do |preference| %>
+      <h5>Preference: <%= preference.name %> : <%= preference.description %></h5>
+      <div class="d-flex">
+        <%= link_to 'edit preference',
+        edit_category_preference_path(category, preference),
+        method: 'get',
+        class: 'btn btn-xs btn-warning m-2 p-2' %>
+        <%= link_to 'delete preference',
+        category_preference_path(category, preference),
+        method: 'delete',
+        data: { confirm: "Are you sure you want to delete this preference?" },
+        class: 'btn btn-xs btn-danger m-2 p-2' %>
+      </div>
+    <% end %>
+    <% if current_user == category.user %>
+      <div class="d-flex">
+        <%= link_to 'edit category',
+        edit_category_path(category),
+        class: 'btn btn-xs btn-warning m-2 p-2 rounder' %>
+        <%= link_to 'delete category',
+        category_path(category),
+        method: 'delete',
+        data: { confirm: "Are you sure you want to delete this category?" },
+        class: 'btn btn-xs btn-danger m-2 p-2 rounder' %>
+      </div>
+    <% end %>
   <% end %>
 </div>
 

@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     @preferences = Preference.all
-     @category = Category.find(params[:format])
+
   end
 
   def new
@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     @category.user = current_user
     if @category.save
-      redirect_to categories_path(@category)
+      redirect_to categories_path
     else
       render :new
     end
