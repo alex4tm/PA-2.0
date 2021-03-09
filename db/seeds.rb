@@ -25,7 +25,7 @@ puts 'Zuma restaurant created'
 puts 'creating 7 bookings'
 7.times do
     booking = Booking.new(
-      notes: Faker::Quotes::Shakespeare,
+      notes: Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
       start_date: Date.today + rand(1..10).days,
       number_of_guests: [1, 2, 3, 4, 5, 6, 7].sample,
       user: User.first,
