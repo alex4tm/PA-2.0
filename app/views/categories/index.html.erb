@@ -1,4 +1,10 @@
 <div class="container">
+  <div class="uuid">
+     <h4 class="btn">Your secure ID <%= current_user.secure_id %> </h4>
+     <%= link_to '',
+      reset_uid_path, method: 'patch',
+      class: "fas fa-sync-alt p-2 mb-1 crud-items" %>
+  </div>
   <div class="d-flex p-1 mt-3 justify-content-center">
     <%= link_to '',
     new_category_path(@category),
@@ -30,9 +36,6 @@
       </div>
     <% end %>
     <div class="crud">
-      <%= link_to '',
-      new_category_preference_path(category),
-      class: "fas fa-plus crud-items" %>
       <%= link_to '',
       edit_category_path(category),
       class: 'fa fa-edit crud-items' %>

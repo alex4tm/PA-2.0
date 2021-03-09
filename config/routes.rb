@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:show] do
     resources :bookings, only: [:new, :create, :index]
   end
-
+  patch '/reset_uid', to: 'categories#reset_uid'
 end
