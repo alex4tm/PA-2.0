@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+require 'open-uri'
 
-
-
-
+puts "Cleaning existing bookings..."
+Booking.destroy_all
 
  Restaurant.create(
       name: 'Zuma',
@@ -20,3 +21,17 @@
 
 puts 'Zuma restaurant created'
 
+
+puts 'creating 7 bookings'
+7.times do
+    booking = Booking.new(
+      notes: Faker::Quotes::Shakespeare,
+      start_date: Date.today + rand(1..10).days,
+      number_of_guests: [1, 2, 3, 4, 5, 6, 7].sample,
+      user: User.first,
+      restaurant: Restaurant.first
+    )
+    booking.save
+end
+
+puts '7 bookings created'
