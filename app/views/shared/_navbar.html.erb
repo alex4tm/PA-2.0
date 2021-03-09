@@ -21,7 +21,7 @@
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/alex4tm", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <% if policy(Category).new? %>
-              <%= link_to "create a category", new_category_path, class: "dropdown-item" %>
+              <%= link_to "Dashboard", categories_path, class: "dropdown-item" %>
             <% end %>
             <% if policy(Restaurant).show? %>
               <%= link_to "profile", "/restaurants/1", class: "dropdown-item" %>

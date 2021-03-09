@@ -1,9 +1,18 @@
 <div class="container">
+  <div class="d-flex p-1 mt-3 justify-content-center">
+    <%= link_to '',
+    new_category_path(@category),
+    class: "fas fa-plus crud-items btn btn-primary text-white" %>
+  </div>
   <% @categories.each do |category| %>
   <div class="white-card">
+    <div class="d-flex align-items-center">
 
-
-    <h2>Category: <%= category.name.capitalize %></h2>
+    <h2><%= category.name.capitalize %></h2>
+    <%= link_to '',
+      new_category_preference_path(category),
+      class: "fas fa-plus p-2 mb-1 crud-items" %>
+    </div>
     <% category.preferences.each do |preference| %>
       <div class="preferences">
         <h5> <i class="fa fa-heart mx-1"></i> <%= preference.name.capitalize %>: <%= preference.description.capitalize %></h5>

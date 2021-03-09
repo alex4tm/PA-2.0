@@ -26,6 +26,6 @@ class PreferencePolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
+    record.category.user == user
   end
 end

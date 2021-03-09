@@ -1,6 +1,10 @@
-<h2>Add a new category</h2>
+<div class="container">
+ <div class="white-card">
 
-<%= simple_form_for (@category) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit 'Create', class: 'btn btn-flat' %>
-<% end %>
+  <h2>Add a new category</h2>
+  <%= simple_form_for (@category) do |f| %>
+    <%= f.input :name %>
+    <%= f.submit 'Create', class: 'btn btn-success' %>
+  <% end %>
+</div>
+ </div>
