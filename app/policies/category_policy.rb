@@ -28,4 +28,8 @@ class CategoryPolicy < ApplicationPolicy
   def destroy?
     update?
   end
+
+  def dashboard
+    true
+  end
 end

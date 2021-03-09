@@ -23,7 +23,8 @@ class CategoriesController < ApplicationController
       render :new
     end
   end
-
+def dashboard
+end
   def edit
     authorize @category
   end
