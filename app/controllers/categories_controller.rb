@@ -41,12 +41,19 @@ class CategoriesController < ApplicationController
     redirect_to categories_path
   end
 
+  def reset_uid
+    @user = current_user
+    @user.reset
+    @user.save
+    authorize @user.categories
+    redirect_to categories_path
+  end
+
 private
 
   def set_category
     @category = Category.find(params[:id])
   end
-
 
   def category_params
     params.require(:category).permit(:name)
