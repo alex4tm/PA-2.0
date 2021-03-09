@@ -35,6 +35,7 @@ gem 'devise'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'faker'
 
 # always add new gems BEFORE 'GROUP'
 group :development, :test do  gem 'pry-byebug'

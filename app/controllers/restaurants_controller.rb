@@ -19,6 +19,7 @@ class RestaurantsController < ApplicationController
   # end
 
   def show
+    @bookings = Booking.all
     @restaurant = Restaurant.find(params[:id])
     authorize @restaurant
   end
