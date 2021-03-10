@@ -21,6 +21,9 @@ class BookingPolicy < ApplicationPolicy
     create?
   end
 
+  def available?
+    user.restaurant_owner?
+  end
   # def update?
   #   true
   # end
