@@ -7,7 +7,12 @@ Rails.application.routes.draw do
     resources :preferences, except: [:show]
   end
   resources :restaurants, only: [:show] do
-    resources :bookings, only: [:new, :create, :index]
+    resources :bookings, only: [:new, :create, :index] do
+      collection do
+        get :available
+      end
+    end
   end
+
   patch '/reset_uid', to: 'categories#reset_uid'
 end

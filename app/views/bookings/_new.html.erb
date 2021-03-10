@@ -3,6 +3,7 @@
     <%= simple_form_for [restaurant, booking] do |f| %>
       <%= f.input :notes %>
       <%= f.hidden_field :start_date, value: start_date %>
+      <%= f.hidden_field :user, value: user.id %>
       <%= f.input :number_of_guests, collection: Booking::NUMBER %>
       <%= f.submit 'Book', class: 'btn btn-success' %>
     <% end %>
