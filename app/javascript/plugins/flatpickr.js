@@ -4,8 +4,9 @@ const initFlatpickr = () => {
   flatpickr(".datepicker", {
     altInput: true,
     enableTime: true,
-    allowInput: true
-  });
+    allowInput: true,
+    defaultHour: '7'});
+
 }
 
 export { initFlatpickr };
