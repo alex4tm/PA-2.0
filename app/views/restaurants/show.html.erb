@@ -32,18 +32,6 @@
 </div>
 
 
-<div class="availability">
-  <div class="form-wrapper" style="width: 270px;">
-    <h1><i class="far fa-calendar-alt"></i></h1>
-
-    <%= simple_form_for :search, method: "get" do |f| %>
-      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, "Check",class: "btn btn-success"%>
-    <% end %>
-  </div>
-</div>
-
 
   <div class="d-flex justify-content-between pt-3" >
     <h1>Bookings</h1>

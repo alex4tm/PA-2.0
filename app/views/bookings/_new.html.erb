@@ -1,0 +1,10 @@
+<div class="d-flex">
+  <div class="booking">
+    <%= simple_form_for [restaurant, booking] do |f| %>
+      <%= f.input :notes %>
+      <%= f.hidden_field :start_date, value: start_date %>
+      <%= f.input :number_of_guests, collection: Booking::NUMBER %>
+      <%= f.submit 'Book', class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
