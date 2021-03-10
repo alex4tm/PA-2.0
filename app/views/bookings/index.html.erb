@@ -1,7 +1,16 @@
-  <div class="container">
-    <% @bookings.each do |booking| %>
-    <div class="d-flex flex-column">
-      <%= booking.notes %>
+  <div class="container newbooking p-0">
+    <div class="availability d-flex justify-content-around">
+      <div class="form-wrapper mr-3" style="width: 270px;">
+        <h1><i class="far fa-calendar-alt"></i></h1>
+
+        <%= simple_form_for :search, method: "get" do |f| %>
+          <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.button :submit, "Check availability",class: "btn btn-primary"%>
+        <% end %>
+      </div>
+
+      <% if @available %>
+        <%= render partial: "bookings/new", locals: { booking: @booking, restaurant: @restaurant, start_date: @start_date } %>
       <% end %>
     </div>
-  </div>
+

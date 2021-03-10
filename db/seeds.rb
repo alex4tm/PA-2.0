@@ -26,7 +26,7 @@ puts 'creating 7 bookings'
 7.times do
     booking = Booking.new(
       notes: Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
-      start_date: Date.today + rand(1..10).days,
+      start_date: Faker::Time.forward(days: 10, period: :evening),
       number_of_guests: [1, 2, 3, 4, 5, 6, 7].sample,
       user: User.first,
       restaurant: Restaurant.first

@@ -23,7 +23,7 @@ class RestaurantsController < ApplicationController
       @bookings = Booking.where(user.first_name == params[:query])
       @search_word = params[:query]
     else
-      @bookings = Booking.all
+      @bookings = Booking.all.order("id DESC")
       @search_word = "All"
     end
     @restaurant = Restaurant.find(params[:id])
