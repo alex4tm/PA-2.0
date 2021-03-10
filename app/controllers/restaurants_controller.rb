@@ -19,13 +19,11 @@ class RestaurantsController < ApplicationController
   # end
 
   def show
-    if params[:query].present?
-      @bookings = Booking.where(user.first_name == params[:query])
-      @search_word = params[:query]
-    else
-      @bookings = Booking.all
-      @search_word = "All"
+    if params[:search].present?
+      @user = User.where(secure_id: params[:search])
     end
+
+    @bookings = Booking.all
     @restaurant = Restaurant.find(params[:id])
     authorize @restaurant
   end

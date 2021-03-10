@@ -4,7 +4,7 @@
   <div class="container">
     <div class="d-flex justify-content-between pt-3 mt-2" >
 
-       <%= form_tag categories_path, method: :get do %>
+       <%= form_tag restaurant_bookings_path(@restaurant), method: :get do %>
         <div class="d-flex justify-content-between">
 
           <%= text_field_tag :search,
@@ -31,6 +31,11 @@
   </div>
 </div>
 
+<% if @user.present? %>
+<%= @user.first_name %>
+
+<% end %>
+
 
 <div class="availability">
   <div class="form-wrapper" style="width: 270px;">
@@ -46,12 +51,12 @@
 
 
   <div class="d-flex justify-content-between pt-3" >
-    <h1>Bookings</h1>
+     <h3>Your bookings of the day</h3>
        <%= form_tag categories_path, method: :get do %>
         <div class="d-flex justify-content-between">
 
-          <%= text_field_tag :search,
-            params[:search],
+          <%= text_field_tag :query,
+            params[:query],
             class: "form-control",
             placeholder: "Find an item"
           %>
@@ -60,6 +65,7 @@
         </div>
       <% end %>
   </div>
+
 
   <% @bookings.each do |booking| %>
 

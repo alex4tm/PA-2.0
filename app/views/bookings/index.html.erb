@@ -1,7 +1,60 @@
+  <!-- START Display the user details based on the search -->
   <div class="container">
-    <% @bookings.each do |booking| %>
-    <div class="d-flex flex-column">
-      <%= booking.notes %>
+    <div class="d-flex justify-content-between">
+      <%= form_tag restaurant_bookings_path(@restaurant), method: :get do %>
+        <div class="d-flex">
+                <%= text_field_tag :search,
+                  params[:search],
+                  class: "form-control",
+                  placeholder: "Insert User ID"
+                %>
+          <%= submit_tag "🔍Search", class: "btn btn-primary"  %>
+        </div>
       <% end %>
+      <div></div>
     </div>
-  </div>
+
+
+    <h6 style="color: red"><%= @error_message if @user.nil?  %></h6>
+
+
+    <% unless @user.nil? %>
+
+      <h1><%= @user.first_name %>'s Preferences</h1>
+      <% @user.categories.each do |category| %>
+        <div class="white-card">
+        <div class="d-flex flex-column align-items-center">
+          <h2><%= category.name.capitalize %></h2>
+          <% category.preferences.each do |preference| %>
+            <div class="preferences">
+              <h5> <i class="fa fa-heart mx-1"></i> <%= preference.name.capitalize %>: <%= preference.description.capitalize %></h5>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
+
+
+
+  <!-- END of user details -->
+
+
+<h1>BOOKINGS</h1>
+  <!-- The bookings section -->
+
+    <% @bookings.each do |booking| %>
+
+      <div class="card-product mt-2 rounded">
+        <div class="card-product-infos ">
+          <h2><%= booking.user.first_name %></h2>
+          <p>Start date: <%= booking.start_date %></p>
+          <p>Number of guests: <%= booking.number_of_guests %></p>
+          <p>Note: <%= booking.notes %></p>
+        </div>
+      </div>
+
+    <% end %>
+
+</div>
+
