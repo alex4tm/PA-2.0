@@ -2,6 +2,15 @@ class BookingsController < ApplicationController
   before_action :set_restaurant_id, only: [:new, :create]
 
   def index
+    # find the user based on the secure ID
+    @categories = policy_scope(Category).order(created_at: :desc)
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    if params[:search].present?
+      @user = User.find_by(secure_id: params[:search])
+
+      @error_message = "User Not Found" if @user.nil?
+    end
+    # Returns all the bookings
     @bookings = policy_scope(Booking)
     @booking = Booking.new
     @restaurant = Restaurant.find(params[:restaurant_id])
