@@ -1,23 +1,20 @@
 <!-- display everything related to specific user -->
 <!-- Take navbar from shared components -->
 
-<div class="main-container text-center">
+<div class="main-container">
 
   <!-- USER DESCRIPTION -->
   <section class = "welcome-box d-flex">
     <img class="avatar mr-2"  src="https://kitt.lewagon.com/placeholder/users/alex4tm">
     <h2>Welcome <%= current_user.first_name %>! </h2>
-
   </section>
 
 
   <!-- HEX CODE OR QR CODE -->
-  <section class = "hex-code mb-3 p-3">
-    <p>a2fg42!</p>
-  </section>
+  <section class = "hex-code mb-3 p-3 text-center">
+    <p class="mb-3"><%= current_user.secure_id %></p>
 
-  <section class = "qr-code mb-3 p-3">
-    <p><i class="fas fa-qrcode"></i></p>
+    <p class="mb-3"><i class="fas fa-qrcode"></i></p>
   </section>
 
 
@@ -25,40 +22,70 @@
 
   <!-- USER FUTURE BOOKINGS -->
   <section>
-    <h6>YOUR UPCOMING BOOKINGS:</h6>
-      <div class="card-product mb-2">
-        <img src="https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" />
-        <div class="card-product-infos">
-          <h2> <% current_user.bookings.each do |booking| %> </h2>
-            <%= booking.restaurant %>
+    <h6>Your preferences:</h6>
+      <!-- <div class="uuid">
+         <h4 class="btn">Your secure ID <%= current_user.secure_id %> </h4>
+         <%= link_to '',
+          reset_uid_path, method: 'patch',
+          class: "fas fa-sync-alt p-2 mb-1 crud-items" %>
+      </div> -->
+
+
+      <% current_user.categories.each do |category| %>
+      <div class="card mb-3 p-2 rounded">
+        <div class="d-flex align-items-center mb-3">
+
+          <h4 class="mb-0"><%= category.name.capitalize %></h4>
+
+          <div class="d-flex ml-2">
+            <%= link_to '',
+              edit_category_path(category),
+              class: 'fa fa-edit crud-items' %>
+
+            <%= link_to '',
+              category_path(category),
+              method: 'delete',
+              data: { confirm: "Are you sure you want to delete this category?" },
+              class: 'fa fa-trash crud-items' %>
+          </div>
+
+        </div>
+
+        <div>
+
+          <% category.preferences.each do |preference| %>
+            <div class="fw-light p-1 py-2 border d-flex justify-content-between align-items-center p-1 mb-2">
+              <p class="mb-0 fw-light"> <i class="fa fa-heart mx-1"></i> <%= preference.name.capitalize %>: <%= preference.description.capitalize %></p>
+              <div class="ml-3 d-flex">
+                <%= link_to '',
+                          edit_category_preference_path(category, preference),
+                          method: 'get',
+                          class: 'fa fa-edit' %>
+
+                <%= link_to '',
+                          category_preference_path(category, preference),
+                          method: 'delete',
+                          data: { confirm: "Are you sure you want to delete this preference?" },
+                          class: 'fa fa-trash' %>
+              </div>
+            </div>
           <% end %>
-          <p>Product description with <strong>relevant info</strong> only.</p>
+
+          <%= link_to '',
+            new_category_preference_path(category),
+            class: "fas fa-plus p-2 mb-1 btn btn-primary text-white w-100" %>
         </div>
       </div>
-
-    <div class="card-product mb-2">
-      <img src="https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" />
-      <div class="card-product-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
-
-    <div class="card-product mb-2">
-      <img src="https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" />
-      <div class="card-product-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
+      <% end %>
   </section>
 </div>
 
 <div class= "navbar-bottom position-fixed h-15 bottom-0 left-0 right-0 d-flex justify-content-around align-items-center">
-  <a href="your link here"><i class="fas fa-chevron-left"></i> &nbsp;
-  <a href="your link here"><i class="fas fa-heart"></i> &nbsp;
-  <a href="your link here"><i class="fas fa-chevron-right"></i> &nbsp;
+  <a href="your link here"><i class="fas fa-home ml-2"></i></i> &nbsp;
 
+
+  <%= link_to '',new_category_path(@category),
+                class: "fas fa-plus p-2 mb-1 crud-items" %>
 </div>
 
 

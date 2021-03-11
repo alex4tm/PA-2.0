@@ -1,7 +1,7 @@
 .page-container {
     border: 1px solid;
     overflow: scroll !important;
-    color:red
+
 }
 
 section.welcome-box {
@@ -16,6 +16,8 @@ border-radius: 5px;
 box-shadow: 0 1px 6px -4px black;
 padding-left: 10px;
 }
+
+
 
 .welcome-box h2{
 margin-bottom: 0;
@@ -80,11 +82,14 @@ font-weight: bold;
   box-sizing: border-box;
   height: 200vh;
   padding: 10px;
+
 }
 
-// .hex-code{
-//   border:1px solid black;
-// }
+.main-container p.mb {
+  font-weight: light;
+  color: black
+}
+
 
 .section {
   display: block;
@@ -145,27 +150,33 @@ font-weight: bold;
 
 }
 
-
-// page two design of website
-
-:root{
-  --primary-color: #669cd6
-  --secodary-color: #53bdff
+.w {
+  // background-color: white;
+  // box-shadow: 3px 4px 10px 2px #00000014;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-*{
-  background-origin: padding box;
-  margin: 0;
-  padding: 0;
-}
+// // page two design of website
+
+// :root{
+//   --primary-color: #669cd6
+//   --secodary-color: #53bdff
+// }
+
+// *{
+//   background-origin: padding box;
+//   margin: 0;
+//   padding: 0;
+// }
 
 
-.html,
-body {
-  font-family :roboto, sans-serif
-}
+// .html,
+// body {
+//   font-family :roboto, sans-serif
+// }
 
-.container {
-  width: 90%;
-  margin: 0 auto;
-}
+// .container {
+//   width: 90%;
+//   margin: 0 auto;
+// }
