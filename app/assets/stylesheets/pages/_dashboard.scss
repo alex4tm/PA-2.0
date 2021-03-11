@@ -1,23 +1,102 @@
-.main-container {
-  color: black;
-  position: absolute;
-  border:1px solid black;
+.page-container {
+    border: 1px solid;
+    overflow: scroll !important;
+    color:red
 }
 
-.welcome-page {
-  border:1px solid black;
+section.welcome-box {
+background: white;
+display: flex;
+align-items: center;
+/* border: 1px solid; */
+margin-bottom: 10px;
+padding: 10px;
+padding-right: 10px;
+border-radius: 5px;
+box-shadow: 0 1px 6px -4px black;
+padding-left: 10px;
 }
+
+.welcome-box h2{
+margin-bottom: 0;
+font-size: 18px;
+font-weight: bold;
+
+}
+.hex-code {
+  background-color: #1edd887a;
+  border-radius: 9px;
+}
+
+.qr-code {
+  background-color: #1edd887a;
+  border-radius: 9px;
+}
+
+.p {
+  font-size: 50px;
+}
+
+.hex-code p {
+    margin-bottom: 0;
+    border: 3px solid #495057;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    border-style: dashed;
+    border-radius: 10px;
+    font-size: 33px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #495057;
+}
+
+.qr-code p {
+    margin-bottom: 0;
+    border: 3px solid #495057;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    border-style: dashed;
+    border-radius: 10px;
+    font-size: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #495057;
+}
+
+.h2 {
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.avatar {
+  height: 50px;
+  width: 50px;
+}
+
+.main-container {
+  color: black;
+  border:1px solid black;
+  box-sizing: border-box;
+  height: 200vh;
+  padding: 10px;
+}
+
+// .hex-code{
+//   border:1px solid black;
+// }
+
+.section {
+  display: block;
+  box-sizing: border-box;
+}
+
 
 .bookings-box {
   border:1px solid black;
+  box-sizing: border-box;
 }
 
-.bottom-box {
-position: absolute;
-bottom: 0;
-width: 100%;
-border:1px solid black;
-}
 
 .card-product {
   overflow: hidden;
@@ -26,18 +105,21 @@ border:1px solid black;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .card-product img {
   height: 100%;
   width: 120px;
   object-fit: cover;
+  box-sizing: border-box;
 }
 
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .card-product p {
@@ -46,8 +128,44 @@ border:1px solid black;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  box-sizing: border-box;
 }
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+
+.navbar-bottom{
+    bottom: 0;
+    background: lightgrey;
+    left: 0;
+    right: 0;
+    height: 10%;
+
+}
+
+
+// page two design of website
+
+:root{
+  --primary-color: #669cd6
+  --secodary-color: #53bdff
+}
+
+*{
+  background-origin: padding box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.html,
+body {
+  font-family :roboto, sans-serif
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
 }
