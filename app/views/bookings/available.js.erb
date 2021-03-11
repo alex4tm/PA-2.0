@@ -1,0 +1,10 @@
+refreshBooking = (innerHTML) => {
+
+  // select the box with the flatpicker
+  const activityChecker = document.querySelector('#availability')
+  console.log(activityChecker)
+  activityChecker.innerHTML = innerHTML
+}
+
+refreshBooking('<%= j render partial: "bookings/new", locals: { booking: @booking, restaurant: @restaurant, start_date: @start_date, user: @user } %>')
+

@@ -7,7 +7,14 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :categories, dependent: :destroy
 
+  before_validation :reset, on: :create
+
   def restaurant_owner?
     self.restaurant.present?
+  end
+
+  def reset
+    new_uid = SecureRandom.hex(3)
+    self.secure_id = new_uid
   end
 end

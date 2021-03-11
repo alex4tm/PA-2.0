@@ -29,7 +29,7 @@ class CategoryPolicy < ApplicationPolicy
     update?
   end
 
-  def dashboard
+  def reset_uid?
     true
   end
 end

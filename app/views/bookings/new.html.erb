@@ -1,7 +1,0 @@
-<h2>Add a new Booking</h2>
-<%= simple_form_for [@restaurant, @booking] do |f| %>
-  <%= f.input :notes %>
-  <%= f.input :start_date %>
-  <%= f.input :number_of_guests, collection: Booking::NUMBER %>
-  <%= f.submit 'Reserve', class: 'btn btn-flat' %>
-<% end %>

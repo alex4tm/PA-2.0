@@ -1,0 +1,73 @@
+.availability {
+  padding: 10px;
+  background-color: #F4F4F4;
+}
+
+.availability .form-control {
+  text-align: center;
+}
+
+.fa-calendar-alt::before {
+  color: #1068efd6;
+}
+
+.booking {
+  width: 300px;
+}
+
+.newbooking {
+  height: 100vh;
+  border: 1px solid;
+  background-size: cover;
+  opacity: 0.8;
+  background-position: center;
+  background-image: url(https://images.unsplash.com/photo-1610888662651-05dbdec7cfae?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzJ8fGNhbGVuZGFyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+}
+
+.search_uid {
+  width: 250px;
+  top: 20px;
+  position: absolute;
+  left: 10px;
+  opacity: 0.9;
+}
+.search_uid .btn {
+  background-color: white;
+  color: #2046b3;
+}
+
+.card-header {
+  right: 10px;
+  bottom: 0;
+  text-center: unset;
+  max-width: 17rem;
+  align-items: center;
+  position: absolute;
+  min-width: 10rem;
+  border-radius: 40%;
+  padding: 10px;
+  opacity: 0.9;
+}
+.card-text{
+  opacity: 1;
+  font-size: 25px;
+}
+
+.preferences {
+  list-style: none;
+  padding: 10px;
+}
+
+.main-preferences {
+  padding: 40px !important;
+}
+
+.search_uid_bookings {
+background-color: white;
+border-color: gray;
+color: #615f5f;
+opacity: 0.9;
+border-radius: 5px;
+border: none;
+}
+
