@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = policy_scope(Category).order(created_at: :desc)
     @category = Category.new
+    @bookings = Booking.where(user: current_user)
     @preferences = Preference.all
   end
 
@@ -18,7 +19,7 @@ class CategoriesController < ApplicationController
     @category.user = current_user
     authorize @category
     if @category.save
-      redirect_to categories_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -32,13 +33,13 @@ class CategoriesController < ApplicationController
     @category.update(category_params)
     authorize @category
 
-    redirect_to categories_path(@category)
+    redirect_to dashboard_path(@category)
   end
 
   def destroy
     @category.destroy
     authorize @category
-    redirect_to categories_path
+    redirect_to dashboard_path
   end
 
   def reset_uid
@@ -46,7 +47,7 @@ class CategoriesController < ApplicationController
     @user.reset
     @user.save
     authorize @user.categories
-    redirect_to categories_path
+    redirect_to dashboard_path
   end
 
 private
