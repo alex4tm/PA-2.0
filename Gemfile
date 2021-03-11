@@ -38,6 +38,7 @@ gem 'simple_form'
 gem 'faker'
 gem 'pg_search', '~> 2.3.0'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
 
 # always add new gems BEFORE 'GROUP'
 group :development, :test do  gem 'pry-byebug'
