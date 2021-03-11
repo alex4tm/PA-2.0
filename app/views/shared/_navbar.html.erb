@@ -24,7 +24,7 @@
               <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
             <% end %>
             <% if policy(Restaurant).show? %>
-              <%= link_to "profile", "/restaurants/1", class: "dropdown-item" %>
+              <%= link_to "Dashboard", "/restaurants/1", class: "dropdown-item" %>
 
             <% end %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
