@@ -13,7 +13,7 @@ before_action :set_preference, only: [:update, :destroy, :edit]
     @preference.category = @category
     authorize @preference
     if @preference.save
-      redirect_to categories_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -28,13 +28,13 @@ before_action :set_preference, only: [:update, :destroy, :edit]
     @preference.update(preference_params)
     authorize @preference
 
-    redirect_to categories_path
+    redirect_to dashboard_path
   end
 
   def destroy
     @preference.destroy
     authorize @preference
-    redirect_to categories_path
+    redirect_to dashboard_path
   end
 
   private
