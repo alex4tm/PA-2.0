@@ -1,50 +1,13 @@
-<div class="container">
-  <div class="uuid">
-     <h4 class="btn">Your secure ID <%= current_user.secure_id %> </h4>
-     <%= link_to '',
-      reset_uid_path, method: 'patch',
-      class: "fas fa-sync-alt p-2 mb-1 crud-items" %>
-  </div>
-  <div class="d-flex p-1 mt-3 justify-content-center">
-    <%= link_to '',
-    new_category_path(@category),
-    class: "fas fa-plus crud-items btn btn-primary text-white" %>
-  </div>
-  <% @categories.each do |category| %>
-  <div class="white-card">
-    <div class="d-flex align-items-center">
+    <% @bookings.each do |booking| %>
+      <div class="card-product mb-2 p-3 pb-4">
+        <img src="https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" />
+        <div class="card-product-infos d-flex flex-column align-items-center">
+          <h4> <strong><%= booking.restaurant.name %></strong> </h4>
+          <p> <%= booking.start_date.strftime("%d of %B, %Y")%> </p>
+          <p> <%= booking.start_date.strftime("%I:%M %p")     %> </p>
+          <p> number of guests :<%= booking.number_of_guests%> </p>
+       </div>
+     </div>
+   <% end %>
 
-    <h2><%= category.name.capitalize %></h2>
-    <%= link_to '',
-      new_category_preference_path(category),
-      class: "fas fa-plus p-2 mb-1 crud-items" %>
-    </div>
-    <% category.preferences.each do |preference| %>
-      <div class="preferences">
-        <h5> <i class="fa fa-heart mx-1"></i> <%= preference.name.capitalize %>: <%= preference.description.capitalize %></h5>
-          <div class="ml-3">
-          <%= link_to '',
-          edit_category_preference_path(category, preference),
-          method: 'get',
-          class: 'fa fa-edit' %>
-          <%= link_to '',
-          category_preference_path(category, preference),
-          method: 'delete',
-          data: { confirm: "Are you sure you want to delete this preference?" },
-          class: 'fa fa-trash' %>
-          </div>
-      </div>
-    <% end %>
-    <div class="crud">
-      <%= link_to '',
-      edit_category_path(category),
-      class: 'fa fa-edit crud-items' %>
-      <%= link_to '',
-      category_path(category),
-      method: 'delete',
-      data: { confirm: "Are you sure you want to delete this category?" },
-      class: 'fa fa-trash crud-items' %>
-    </div>
-  </div>
-  <% end %>
-</div>
+

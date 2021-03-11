@@ -5,11 +5,10 @@ Rails.application.routes.draw do
 
   # get dashboard from the profile controller with method dashboard
   get "/dashboard", to: 'profile#dashboard'
+  get "/my_bookings", to: 'profile#my_bookings'
 
   resources :categories, except: [:show] do
     resources :preferences, except: [:show]
-
-
   end
   resources :restaurants, only: [:show] do
     resources :bookings, only: [:new, :create, :index] do
