@@ -1,3 +1,5 @@
+require 'twilio-ruby'
+
 class BookingsController < ApplicationController
   before_action :set_restaurant_id, only: [:new, :create]
 
@@ -45,6 +47,7 @@ class BookingsController < ApplicationController
     @booking.user = User.find(params[:booking][:user])
     authorize @booking
     if @booking.save
+      SmsConfirmationJob.perform_now
       redirect_to @restaurant
     else
     end
