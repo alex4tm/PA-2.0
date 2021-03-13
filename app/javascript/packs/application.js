@@ -8,6 +8,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+import { loadDynamicBannerText } from '../components/banner';
+
 import { initFlatpickr } from "../plugins/flatpickr";
 
 initFlatpickr();
@@ -35,4 +37,5 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  loadDynamicBannerText();
 });
