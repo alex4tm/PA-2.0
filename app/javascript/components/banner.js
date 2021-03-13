@@ -7,6 +7,8 @@ const loadDynamicBannerText = () => {
     showCursor: false,
     fadeOut: true,
     fadeOutDelay: 8000,
+    backDelay: 2000,
+    backSpeed: 40,
     loop: true
   });
   new Typed('#typed-text2', {
@@ -16,7 +18,9 @@ const loadDynamicBannerText = () => {
     fadeOut: true,
     fadeOutDelay: 4000,
     loop: true,
-    startDelay: 6000
+    backDelay: 2000,
+    startDelay: 6000,
+    backSpeed: 40,
   });
 }
 

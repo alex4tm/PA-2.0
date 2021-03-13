@@ -1,1 +1,53 @@
 // Specific CSS for your home-page
+.valueproposition {
+  margin: 20px;
+  align-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.value {
+  width: 33%;
+}
+
+.value1 {
+  width: 50px;
+  font-size: 40px;
+  color: #79a783;
+}
+.value1 p {
+  font-size: smaller !important;
+  margin-left: 5px !important;
+}
+
+.value2 {
+  width: 50px;
+  font-size: 40px;
+  color: #c74848;
+}
+.value2 p {
+  font-size: smaller !important;
+  margin-left: 5px !important;
+}
+
+.value3 {
+  width: 50px;
+  font-size: 40px;
+  color: #5c5896;
+}
+.value3p {
+  font-size: smaller !important;
+  margin-left: 5px !important;
+}
+
+
+.counter {
+  margin-top: 20px;
+  padding: 0px 140px;
+}
+
+.counter span {
+  font-size: 25px;
+  color: gray;
+  border-radius: 50%;
+}
