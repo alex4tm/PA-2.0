@@ -11,6 +11,7 @@ require 'open-uri'
 puts "Cleaning existing bookings..."
 Booking.destroy_all
 
+
  Restaurant.create(
       name: 'Zuma',
       address: 'Down town - Dubai',
@@ -19,13 +20,15 @@ Booking.destroy_all
       rating: 5
     )
 
+
 puts 'Zuma restaurant created'
 
 
 puts 'creating 7 bookings'
-7.times do
+NOTES = ['Do not present alcohol menu', 'Quick business meeting', 'Terrace table preffered', 'Away from the live band please', 'Might need to accommodate 2 children', 'Possible late arrival 10minutes']
+15.times do
     booking = Booking.new(
-      notes: Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
+      notes: NOTES.sample,
       start_date: Faker::Time.forward(days: 10, period: :evening),
       number_of_guests: [1, 2, 3, 4, 5, 6, 7].sample,
       user: User.where(restaurant: nil).sample,
@@ -34,4 +37,4 @@ puts 'creating 7 bookings'
     booking.save
 end
 
-puts '7 bookings created'
+puts '15 bookings created'
