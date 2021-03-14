@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :categories, except: [:show] do
     resources :preferences, except: [:show]
   end
-  resources :restaurants, only: [:show] do
+  resource :restaurants, only: [:show] do
   end
   resources :bookings, only: [:new, :create, :index] do
     collection do
