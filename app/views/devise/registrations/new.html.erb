@@ -12,11 +12,15 @@
           <%= f.input :first_name,
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "first-name" }%>
+                      input_html: { autocomplete: "first-name", placeholder: "Smith" }%>
           <%= f.input :last_name,
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "last-name" }%>
+          <%= f.input :username,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "username" }%>
           <%= f.input :phone_number,
                       required: true,
                       autofocus: true,
@@ -38,7 +42,6 @@
           <%= f.button :submit, "Sign up" %>
         </div>
       <% end %>
-
 
         <div class="hr"></div>
         <div class="foot-lnk">

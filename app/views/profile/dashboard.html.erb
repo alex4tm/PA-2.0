@@ -1,3 +1,26 @@
+
+<!-- display everything related to specific user -->
+<!-- Take navbar from shared components -->
+
+<div class="main-container mb-5">
+
+  <!-- USER DESCRIPTION -->
+  <section class = "welcome-box d-flex">
+    <img class="avatar mr-2"  src="https://kitt.lewagon.com/placeholder/users/alex4tm">
+    <h2>Welcome <%= current_user.first_name %>! </h2>
+  </section>
+
+
+  <!-- HEX CODE OR QR CODE -->
+  <section class = "hex-code mb-3 p-3 text-center">
+    <p class="mb-3"><%= current_user.secure_id %></p>
+
+    <p class="mb-3"><%= @svg.html_safe %></p>
+  </section>
+
+
+
+
   <!-- USER FUTURE BOOKINGS -->
   <section>
     <h6>Your preferences:</h6>

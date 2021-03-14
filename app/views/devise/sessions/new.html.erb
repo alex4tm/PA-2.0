@@ -30,18 +30,27 @@
 
         <div class="form-inputs">
           <%= f.input :first_name,
+                      placeholder: 'John',
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "first-name" }%>
           <%= f.input :last_name,
+                      placeholder: 'Smith',
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "last-name" }%>
+          <%= f.input :username,
+                      placeholder: "John S.",
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "username" }%>
           <%= f.input :phone_number,
+                      placeholder: '+97155123456',
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "phone_number" }%>
           <%= f.input :email,
+                      placeholder: 'JohnS@email.com',
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "email" }%>
@@ -58,7 +67,6 @@
           <%= f.button :submit, "Sign up" %>
         </div>
       <% end %>
-
 
         <div class="hr"></div>
         <div class="foot-lnk">

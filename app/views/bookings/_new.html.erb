@@ -1,6 +1,6 @@
 <div class="d-flex">
   <div class="booking">
-    <%= simple_form_for [restaurant, booking] do |f| %>
+    <%= simple_form_for booking do |f| %>
       <%= f.input :notes %>
       <%= f.hidden_field :start_date, value: start_date %>
       <%= f.hidden_field :user, value: user.id %>

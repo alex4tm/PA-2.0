@@ -1,11 +1,10 @@
 require 'twilio-ruby'
 
 class BookingsController < ApplicationController
-  before_action :set_restaurant_id, only: [:new, :create]
+  before_action :set_restaurant, only: [:new, :create, :index, :available]
 
   def index
     # find the user based on the secure ID
-    @restaurant = Restaurant.find(params[:restaurant_id])
     @bookings = policy_scope(Booking)
 
     if params[:search].present?
@@ -21,13 +20,12 @@ class BookingsController < ApplicationController
     puts "USER ID - #{@user.secure_id}"
     @booking = Booking.new
     @start_date = params[:booking_search][:starts_at]
-    @restaurant = Restaurant.find(params[:restaurant_id])
     authorize @booking
 
     if @available
 
       respond_to do |format|
-        format.html { restaurant_bookings_path @restaurant }
+        format.html { bookings_path }
         format.js
       end
 
@@ -46,8 +44,10 @@ class BookingsController < ApplicationController
     @booking.restaurant = @restaurant
     @booking.user = User.find(params[:booking][:user])
     authorize @booking
+    message = "#{@restaurant.name.capitalize} at #{@booking.start_date.strftime('%B %e at %l:%M %p')}"
+    phone_number = "#{@booking.user.phone_number}"
     if @booking.save
-      SmsConfirmationJob.perform_now
+      SmsConfirmationJob.perform_now(message, phone_number)
       redirect_to @restaurant
     else
     end
@@ -63,8 +63,8 @@ class BookingsController < ApplicationController
     Booking.where(start_date: (start_time.to_date - 2.hours..start_time.to_date + 2.hours))
   end
 
-  def set_restaurant_id
-    @restaurant = Restaurant.find(params[:restaurant_id])
+  def set_restaurant
+    @restaurant = current_user.restaurant
   end
 
   def booking_params
