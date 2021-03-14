@@ -46,8 +46,10 @@ class BookingsController < ApplicationController
     @booking.restaurant = @restaurant
     @booking.user = User.find(params[:booking][:user])
     authorize @booking
+    message = "#{@restaurant.name.capitalize} at #{@booking.start_date.strftime('%B %e at %l:%M %p')}"
+    phone_number = "#{@booking.user.phone_number}"
     if @booking.save
-      SmsConfirmationJob.perform_now
+      SmsConfirmationJob.perform_now(message, phone_number)
       redirect_to @restaurant
     else
     end

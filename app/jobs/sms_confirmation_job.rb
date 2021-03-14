@@ -1,7 +1,7 @@
 class SmsConfirmationJob < ApplicationJob
   queue_as :default
 
-  def perform
+  def perform(message, phone_number)
     # Do something later
 
     # Your Account Sid and Auth Token from twilio.com/console
@@ -12,9 +12,9 @@ class SmsConfirmationJob < ApplicationJob
 
     message = @client.messages
       .create(
-         body: 'Confirmation @ZUMA 2:00 PM 12.03.21. We take care of your preferences :D',
+         body: "Your booking is confirmed at #{message}. We take care of your preferences :D",
          from: 'whatsapp:+14155238886',
-         to: 'whatsapp:+971507207651'
+         to: "whatsapp:#{phone_number}"
        )
     puts message.sid
   end
