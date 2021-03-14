@@ -16,19 +16,24 @@
     <div class="page-container vh-100 overflow-scroll position-relative">
       <%= render "shared/navbar" %>
       <%= render 'shared/flashes' %>
-      <div class="main-container mb-5">
-        <!-- USER DESCRIPTION -->
-        <section class = "welcome-box d-flex">
-          <img class="avatar mr-2"  src="https://kitt.lewagon.com/placeholder/users/alex4tm">
-          <h2>Welcome <%= current_user.first_name %>! </h2>
-        </section>
+     <div class="main-container mb-5">
 
-        <!-- HEX CODE OR QR CODE -->
-        <section class = "hex-code mb-3 p-3 text-center">
+      <!-- USER DESCRIPTION -->
+      <section class = "welcome-box d-flex">
+        <img class="avatar mr-2"  src="https://kitt.lewagon.com/placeholder/users/alex4tm">
+        <h2>Welcome <%= current_user.first_name %>! </h2>
+      </section>
+
+
+      <!-- HEX CODE OR QR CODE -->
+      <section class = "hex-code mb-3 p-3 text-center">
+        <div class="d-flex justify-content-between align-items-center">
           <p class="mb-3"><%= current_user.secure_id %></p>
 
-          <p class="mb-3"><i class="fas fa-qrcode"></i></p>
-        </section>
+          <span class="mb-3"><%= @svg.html_safe %></span>
+
+        </div>
+      </section>
 
         <%= yield %>
       </div>

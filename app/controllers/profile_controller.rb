@@ -4,7 +4,18 @@ class ProfileController < ApplicationController
     @bookings = Booking.where(user: current_user)
     @category = Category.new
     authorize current_user
+    qr_code
+  end
 
+  def my_bookings
+    @bookings = Booking.where(user: current_user)
+    authorize current_user
+    qr_code
+  end
+
+  private
+
+  def qr_code
     url = bookings_url(search: current_user.secure_id)
     @qrcode = RQRCode::QRCode.new(url)
 
@@ -14,10 +25,5 @@ class ProfileController < ApplicationController
       shape_rendering: 'crispEdges',
       module_size: 6
     )
-  end
-
-  def my_bookings
-    @bookings = Booking.where(user: current_user)
-    authorize current_user
   end
 end
