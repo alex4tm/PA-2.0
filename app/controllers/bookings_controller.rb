@@ -48,7 +48,7 @@ class BookingsController < ApplicationController
     phone_number = "#{@booking.user.phone_number}"
     if @booking.save
       SmsConfirmationJob.perform_now(message, phone_number)
-      redirect_to @restaurant
+      redirect_to restaurants_path
     else
     end
   end
