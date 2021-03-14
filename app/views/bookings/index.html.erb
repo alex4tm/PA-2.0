@@ -9,12 +9,13 @@
                             class: "form-control",
                             placeholder: "Insert User ID"%>
 
-        <%= submit_tag "🔍 Search", class: "search_uid_bookings"  %>
+        <%= submit_tag "🔍 Search", class: "search_uid_bookings ml-2"  %>
 
-        <h6 style="color: red"><%= @error_message if @user.nil?  %></h6>
       </div>
+        <h6 class="p-3 m-3 rounded" style="color: red"><%= image_tag "https://media3.giphy.com/media/aYpmlCXgX9dc09dbpl/giphy.gif" if @user.nil? %></h6>
     <% end %>
   </div>
+
 
 
   <% unless @user.nil? %>
