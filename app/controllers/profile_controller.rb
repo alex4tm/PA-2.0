@@ -3,7 +3,9 @@ class ProfileController < ApplicationController
     @bookings = Booking.where(user: current_user)
     @category = Category.new
     authorize current_user
-    @qrcode = RQRCode::QRCode.new("https://www.lewagon.com")
+
+    url = bookings_url(search: current_user.secure_id)
+    @qrcode = RQRCode::QRCode.new(url)
 
     @svg = @qrcode.as_svg(
       offset: 0,
