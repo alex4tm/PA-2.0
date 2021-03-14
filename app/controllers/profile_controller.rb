@@ -3,6 +3,14 @@ class ProfileController < ApplicationController
     @bookings = Booking.where(user: current_user)
     @category = Category.new
     authorize current_user
+    @qrcode = RQRCode::QRCode.new("https://www.lewagon.com")
+
+    @svg = @qrcode.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      module_size: 6
+    )
   end
 
   def my_bookings

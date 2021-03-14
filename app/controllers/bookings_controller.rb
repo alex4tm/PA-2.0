@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     if @available
 
       respond_to do |format|
-        format.html { restaurant_bookings_path @restaurant }
+        format.html { bookings_path }
         format.js
       end
 
