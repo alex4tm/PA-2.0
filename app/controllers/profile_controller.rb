@@ -1,4 +1,5 @@
 class ProfileController < ApplicationController
+  layout 'dashboard'
   def dashboard
     @bookings = Booking.where(user: current_user)
     @category = Category.new
@@ -9,5 +10,4 @@ class ProfileController < ApplicationController
     @bookings = Booking.where(user: current_user)
     authorize current_user
   end
-
 end
