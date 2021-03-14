@@ -1,7 +1,6 @@
 .page-container {
-    border: 1px solid;
-    overflow: scroll !important;
-    color: #353232;
+  overflow: scroll !important;
+  color: #353232;
 }
 
 section.welcome-box {
@@ -17,8 +16,6 @@ box-shadow: 0 1px 6px -4px black;
 padding-left: 10px;
 }
 
-
-
 .welcome-box h2{
 margin-bottom: 0;
 font-size: 18px;
@@ -26,7 +23,8 @@ font-weight: bold;
 
 }
 .hex-code {
-  background-color: #1edd887a;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 9px;
 }
 
@@ -42,13 +40,16 @@ font-weight: bold;
 .hex-code p {
     margin-bottom: 0;
     border: 3px solid #495057;
-    padding-top: 35px;
-    padding-bottom: 35px;
     border-style: dashed;
     border-radius: 10px;
-    font-size: 33px;
+    font-size: 25px;
     font-weight: 800;
     color: #495057;
+    height: 50px;
+    display: flex;
+    align-items: center !important;
+    margin-bottom: 0px !important;
+    padding: 20px !important;
 }
 
 .qr-code p {
@@ -77,7 +78,6 @@ font-weight: bold;
 
 .main-container {
   color: black;
-  border:1px solid black;
   padding: 10px;
 
 }
