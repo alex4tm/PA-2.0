@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
   def index
     # find the user based on the secure ID
     @bookings = policy_scope(Booking)
-
+    authorize current_user
     if params[:search].present?
       @user = User.find_by(secure_id: params[:search])
       @error_message = "User Not Found" if @user.nil?
