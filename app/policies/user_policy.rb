@@ -10,4 +10,8 @@ class UserPolicy < ApplicationPolicy
   def index?
     user.restaurant_owner?
   end
+
+  def edit_profile?
+    dashboard?
+  end
 end

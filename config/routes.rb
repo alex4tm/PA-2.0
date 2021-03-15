@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # get dashboard from the profile controller with method dashboard
   get "/dashboard", to: 'profile#dashboard'
   get "/my_bookings", to: 'profile#my_bookings'
+  get "/edit_profile", to: 'profile#edit_profile'
 
   resources :categories, except: [:show] do
     resources :preferences, except: [:show]
