@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   before_action :set_restaurant, only: [:new, :create, :index, :available]
 
   def index
+    authorize current_user
     # find the user based on the secure ID
     @bookings = policy_scope(Booking)
 
@@ -15,22 +16,21 @@ class BookingsController < ApplicationController
 
   def available
     @available = check_availability(params[:booking_search][:starts_at])
+
     @user = User.find_by(secure_id: params[:booking_search][:user])
     puts '-' * 20
     puts "USER ID - #{@user.secure_id}"
     @booking = Booking.new
     @start_date = params[:booking_search][:starts_at]
     authorize @booking
-
     if @available
 
       respond_to do |format|
         format.html { bookings_path }
         format.js
       end
-
     else
-      flash.alert = "no availabilities"
+      flash.alert = "Date not available"
     end
   end
 
@@ -50,6 +50,8 @@ class BookingsController < ApplicationController
       SmsConfirmationJob.perform_now(message, phone_number)
       redirect_to restaurants_path
     else
+      flash.alert = "boking not saved"
+      redirect_to restaurants_path
     end
   end
 
@@ -60,7 +62,8 @@ class BookingsController < ApplicationController
   end
 
   def check_bookings(start_time)
-    Booking.where(start_date: (start_time.to_date - 2.hours..start_time.to_date + 2.hours))
+    @restaurant.bookings.where("start_date BETWEEN ? AND ?", start_time.to_datetime - 2.hours, start_time.to_datetime + 2.hours)
+
   end
 
   def set_restaurant
