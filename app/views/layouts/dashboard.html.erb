@@ -14,23 +14,31 @@
   <body>
 
     <div class="page-container vh-100 overflow-scroll position-relative">
-      <%= render "shared/navbar" %>
+
       <%= render 'shared/flashes' %>
      <div class="main-container mb-5">
 
       <!-- USER DESCRIPTION -->
-      <section class = "welcome-box d-flex">
-        <img class="avatar mr-2"  src="https://kitt.lewagon.com/placeholder/users/alex4tm">
-        <h2>Welcome <%= current_user.first_name %>! </h2>
+      <section class="d-flex pb-2">
+        <%= image_tag "placeholder-alex.jpg", class: "avatar mr-2" %>
+
+        <h2 class="mt-2">Welcome <%= current_user.first_name %>! </h2>
+        <!-- <h2><%= current_user.phone_number %>! </h2>
+        <h2><%= current_user.email %>! </h2> -->
       </section>
 
-
       <!-- HEX CODE OR QR CODE -->
-      <section class = "hex-code mb-3 p-3 text-center">
-        <div class="d-flex justify-content-between align-items-center">
-          <p class="mb-3"><%= current_user.secure_id %></p>
+      <section id="info-wrapper" class="hex-code text-center">
+        <div class="justify-content-between align-items-center">
 
-          <span class="mb-3"><%= @svg.html_safe %></span>
+          <p class="d-flex align-items-inbetween"><%= current_user.secure_id %>
+            <i id="qr-arrow" class="fas fa-arrow-circle-down qr-arrow"></i>
+<!--             <i class="fas fa-arrow-circle-up"></i> -->
+          </p>
+
+
+
+          <span id="qr-code" class="open-close hidden"><%= @svg.html_safe %></span>
 
         </div>
       </section>
@@ -39,14 +47,21 @@
       </div>
 
       <div class= "navbar-bottom position-fixed h-15 bottom-0 left-0 right-0 d-flex justify-content-around align-items-center">
-        <a href="/dashboard"><i class="fas fa-home ml-2"></i></i> &nbsp;
+          <%= link_to dashboard_path, class: "crud-items" do %>
+            <i class="fas fa-home"></i>
+            <h6>Home</h6>
+          <% end %>
 
-        <%= link_to '',my_bookings_path,
-                      class: "fas fa-book p-2 mb-1 crud-items" %>
 
-      <!-- Button trigger modal -->
-      <button type="button" class="fas fa-plus specs p-2 mb-1 crud-items" data-toggle="modal" data-target="#exampleModal">
-      </button>
+        <%= link_to my_bookings_path, class: "crud-items" do %>
+          <i class="fas fa-book"></i>
+          <h6>Bookings</h6>
+        <% end %>
+
+        <%= link_to new_category_path(@category), class: "crud-items" do %>
+          <i class="fas fa-plus" data-toggle="modal" data-target="#exampleModal"></i>
+          <h6>Add</h6>
+        <% end %>
       </div>
 
 

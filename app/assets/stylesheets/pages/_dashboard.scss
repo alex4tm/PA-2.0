@@ -1,7 +1,30 @@
-// .page-container {
-//   overflow: scroll !important;
-//   color: #353232;
-// }
+
+.flip-up {
+  transform: scaleY(-1);
+}
+
+#preference-card{
+  background-color: #8bc6e8;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+
+  h6 {
+    font-family: "Nunito", "Helvetica", "sans-serif";
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+}
+
+.page-container {
+  color: #353232;
+}
+
 
 section.welcome-box {
 background: white;
@@ -26,11 +49,36 @@ font-weight: bold;
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 9px;
+  animation: 1s ease all;
+
 }
 
-.qr-code {
-  background-color: #1edd887a;
+.dash-white-card {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 9px;
+  animation: 1s ease all;
+}
+
+
+#qr-code svg {
+  margin: 0 0 30px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.qr-arrow{
+  position: absolute;
+  bottom: 7px;
+}
+
+
+#info-wrapper{
+  position: relative;
+  padding: 10px;
 }
 
 .p {
@@ -47,9 +95,11 @@ font-weight: bold;
     color: #495057;
     height: 50px;
     display: flex;
-    align-items: center !important;
-    margin-bottom: 0px !important;
+    align-items: center;
+    margin-bottom: 25px !important;
     padding: 20px !important;
+    justify-content: center;
+
 }
 
 .qr-code p {

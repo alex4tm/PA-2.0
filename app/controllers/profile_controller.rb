@@ -1,22 +1,28 @@
 class ProfileController < ApplicationController
   layout 'dashboard'
+  before_action :set_layout_variables
+
   def dashboard
     @bookings = Booking.where(user: current_user)
-    @category = Category.new
+
     @preference = Preference.new
     authorize current_user
-    qr_code
   end
 
   def my_bookings
     @bookings = Booking.where(user: current_user)
     authorize current_user
-    qr_code
   end
+
+  def edit_profile
+    authorize current_user
+  end
+
 
   private
 
-  def qr_code
+  def set_layout_variables
+    @category = Category.new
     url = bookings_url(search: current_user.secure_id)
     @qrcode = RQRCode::QRCode.new(url)
 
