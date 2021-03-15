@@ -16,7 +16,7 @@
         <li class="nav-item active">
           <%= link_to "Home", "/", class: "nav-link mt-1" %>
         </li>
-            <% policy(Category).new? ? avatarphoto = "alex4tm" : avatarphoto = "lexie-claudia" %>
+            <% policy(Category).new? ? avatarphoto = "lexie-claudia" : avatarphoto = "alex4tm" %>
 
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{avatarphoto}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

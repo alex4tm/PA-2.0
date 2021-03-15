@@ -1,64 +1,61 @@
+ <div class="restaurant-dashboard" style="background-image: linear-gradient(rgba(44,55,22,0.9),rgba(155,155,155,0.2)), url(https://images.unsplash.com/photo-1567745218240-95b39d13de05?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8ZmluZSUyMGRpbmluZ3xlbnwwfHwwfGJsYWNr&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)";>
+<!-- <img src="https://images.unsplash.com/photo-1567745218240-95b39d13de05?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8ZmluZSUyMGRpbmluZ3xlbnwwfHwwfGJsYWNr&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)" alt=""> -->
 
   <!-- START Display the user details based on the search -->
-<div class="container">
-  <div class="d-flex justify-content-between">
-    <%= form_tag bookings_path, method: :get do %>
-      <div class="d-flex m-2">
-        <%= text_field_tag :search,
-                            params[:search],
-                            class: "form-control",
-                            placeholder: "Insert User ID"%>
+  <div class="container">
+    <div class="d-flex justify-content-between">
+      <%= form_tag bookings_path, method: :get do %>
+        <div class="d-flex m-2">
+          <%= text_field_tag :search,
+          params[:search],
+          class: "form-control",
+          placeholder: "Insert User ID"%>
 
-        <%= submit_tag "🔍 Search", class: "search_uid_bookings ml-2"  %>
+            <%= submit_tag "🔍 Search", class: "search_uid_bookings ml-2 px-2"  %>
 
-      </div>
-        <h6 class="p-3 m-3 rounded" style="color: red"><%= image_tag "https://media3.giphy.com/media/aYpmlCXgX9dc09dbpl/giphy.gif" if @user.nil? %></h6>
-    <% end %>
-  </div>
-
-
-
-  <% unless @user.nil? %>
-
-        <div class="availability d-flex justify-content-around" id="availability">
-          <div class="form-wrapper mr-3" style="width: 270px;">
-            <h1><i class="far fa-calendar-alt"></i></h1>
-
-            <%= simple_form_for(:booking_search,
-                                method: "get",
-                                url: available_bookings_path,
-                                remote: true ) do |f| %>
-
-              <%= f.hidden_field :user, value: @user.secure_id %>
-              <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-              <p id="error-message"></p>
-              <%= f.button :submit, "Check availability",class: "search_uid_bookings"%>
-            <% end %>
-          </div>
         </div>
+      <% end %>
+    </div>
 
+    <% if @user.nil? %>
+      <h6 class="p-3 m-3 rounded" style="color: red"><%= image_tag "https://media3.giphy.com/media/aYpmlCXgX9dc09dbpl/giphy.gif" %></h6>
+    <% else %>
 
-
-    <div class="card mb-4 p-2 m-2 main-preferences">
-      <h2><%= @user.first_name %>'s Preferences</h2>
-      <div class="row">
-        <% @user.categories.each do |category| %>
+      <div class="card mb-4 p-2 m-2 main-preferences">
+        <h2><%= @user.last_name %> <%= @user.first_name %>'s Preferences</h2>
+        <div class="row">
+          <% @user.categories.each do |category| %>
           <div class="col-12 col-sm-3">
             <h3><%= category.name.capitalize %></h3>
             <% category.preferences.each do |preference| %>
-              <ul class="preferences">
-                <li> <i class="fa fa-heart mx-1"></i> <%= preference.name.capitalize %>: <%= preference.description.capitalize %></li>
-              </ul>
+            <ul class="preferences">
+              <li> <i class="fa fa-heart mx-1"></i> <%= preference.name.capitalize %>: <%= preference.description.capitalize %></li>
+            </ul>
             <% end %>
           </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
 
+      <div class="availability d-flex justify-content-around" id="availability">
+        <div class="form-wrapper mr-3" style="width: 250px;">
+          <h1><i class="far fa-calendar-alt"></i></h1>
 
-  <% end %>
+          <%= simple_form_for(:booking_search,
+            method: "get",
+            url: available_bookings_path,
+            remote: true ) do |f| %>
+            <%= f.hidden_field :user, value: @user.secure_id %>
+            <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <p id="error-message"></p>
+            <%= f.button :submit, "Check availability",class: "search_uid_bookings"%>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<!-- END of user details -->
+    <!-- END of user details -->
 
 
