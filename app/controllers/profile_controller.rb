@@ -14,6 +14,8 @@ class ProfileController < ApplicationController
     qr_code
   end
 
+
+
   private
 
   def qr_code

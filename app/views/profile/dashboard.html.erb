@@ -2,9 +2,11 @@
 <!-- display everything related to specific user -->
 <!-- Take navbar from shared components -->
 
-<!-- USER FUTURE BOOKINGS -->
-<section>
-  <h6>Your preferences:</h6>
+  <!-- USER FUTURE BOOKINGS -->
+  <section>
+    <div id="preference-card" class="dash-white-card">
+      <h6>Your preferences:</h6>
+    </div>
       <!-- <div class="uuid">
          <h4 class="btn">Your secure ID <%= current_user.secure_id %> </h4>
          <%= link_to '',
@@ -12,9 +14,9 @@
           class: "fas fa-sync-alt p-2 mb-1 crud-items" %>
         </div> -->
 
-        <% current_user.categories.each do |category| %>
-        <div class="card mb-3 p-2 rounded">
-          <div class="d-flex align-items-center mb-3">
+      <% current_user.categories.each do |category| %>
+      <div class="card mb-3 p-2 dash-white-card">
+        <div class="d-flex align-items-center mb-3">
 
             <h4 class="mb-0"><%= category.name.capitalize %></h4>
 

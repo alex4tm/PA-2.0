@@ -19,6 +19,14 @@ position: absolute;
 .crud-items {
   margin: 0px 15px;
   color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h6 {
+    margin: 0;
+  }
 }
 
 .crud-items:hover {
@@ -75,12 +83,7 @@ padding: 10px;
 .card-product .card-product-infos {
   padding: 16px;
 }
-body{
-  margin:0;
-  color:#6a6f8c;
-  background:#c8c8c8;
-  font:600 16px/18px 'Open Sans',sans-serif;
-}
+
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
 .clearfix:after{clear:both;display:block}

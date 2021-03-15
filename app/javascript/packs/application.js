@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 import { loadDynamicBannerText } from '../components/banner';
+import { flipQr } from '../components/qr';
 
 import { initFlatpickr } from "../plugins/flatpickr";
 
@@ -38,4 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   loadDynamicBannerText();
+  flipQr();
 });
