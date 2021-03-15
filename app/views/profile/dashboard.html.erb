@@ -2,60 +2,131 @@
 <!-- display everything related to specific user -->
 <!-- Take navbar from shared components -->
 
-  <!-- USER FUTURE BOOKINGS -->
-  <section>
-    <h6>Your preferences:</h6>
+<!-- USER FUTURE BOOKINGS -->
+<section>
+  <h6>Your preferences:</h6>
       <!-- <div class="uuid">
          <h4 class="btn">Your secure ID <%= current_user.secure_id %> </h4>
          <%= link_to '',
           reset_uid_path, method: 'patch',
           class: "fas fa-sync-alt p-2 mb-1 crud-items" %>
-      </div> -->
+        </div> -->
 
-      <% current_user.categories.each do |category| %>
-      <div class="card mb-3 p-2 rounded">
-        <div class="d-flex align-items-center mb-3">
+        <% current_user.categories.each do |category| %>
+        <div class="card mb-3 p-2 rounded">
+          <div class="d-flex align-items-center mb-3">
 
-          <h4 class="mb-0"><%= category.name.capitalize %></h4>
+            <h4 class="mb-0"><%= category.name.capitalize %></h4>
 
-          <div class="d-flex ml-2">
-            <%= link_to '',
-              edit_category_path(category),
-              class: 'fa fa-edit crud-items' %>
+            <div class="d-flex ml-2">
 
-            <%= link_to '',
+              <button type="button" class="fa fa-edit" data-toggle="modal" data-target="#edit-category-modal-<%= category.id %> ">
+              </button>
+              <div class="modal fade" id="edit-category-modal-<%= category.id %>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">EDIT <%= category.name %></h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+
+                      <%= simple_form_for (category) do |f| %>
+                      <%= f.input :name %>
+                    </div>
+                    <div class="modal-footer">
+                      <%= f.submit 'Update', class: 'btn btn-primary' %>
+                    </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+
+              <%= link_to '',
               category_path(category),
               method: 'delete',
               data: { confirm: "Are you sure you want to delete this category?" },
               class: 'fa fa-trash crud-items' %>
+
+
+            </div>
+
           </div>
 
-        </div>
+          <div>
 
-        <div>
-
-          <% category.preferences.each do |preference| %>
+            <% category.preferences.each do |preference| %>
             <div class="fw-light p-1 py-2 border d-flex justify-content-between align-items-center p-1 mb-2">
               <p class="mb-0 fw-light"> <i class="fa fa-heart mx-1"></i> <%= preference.name.capitalize %>: <%= preference.description.capitalize %></p>
               <div class="ml-3 d-flex">
-                <%= link_to '',
-                          edit_category_preference_path(category, preference),
-                          method: 'get',
-                          class: 'fa fa-edit' %>
 
-                <%= link_to '',
-                          category_preference_path(category, preference),
-                          method: 'delete',
-                          data: { confirm: "Are you sure you want to delete this preference?" },
-                          class: 'fa fa-trash' %>
+               <!-- Button trigger modal -->
+               <button type="button" class="fa fa-edit pr-2" data-toggle="modal" data-target="#exampleModal-<%= preference.id %>">
+               </button>
+
+               <!-- Modal -->
+               <div class="modal fade" id="exampleModal-<%= preference.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel"><%= preference.name.capitalize %> </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                     <%= simple_form_for [category, preference] do |f| %>
+                     <%= f.input :name %>
+                     <%= f.input :description %>
+                   </div>
+                   <div class="modal-footer">
+                    <%= f.submit 'Create', class: 'btn btn-primary' %>
+                    <% end %>
+                  </div>
+                </div>
               </div>
             </div>
-          <% end %>
 
-          <%= link_to '',
-            new_category_preference_path(category),
-            class: "fas fa-plus p-2 mb-1 btn btn-primary text-white w-100" %>
+            <%= link_to '',
+            category_preference_path(category, preference),
+            method: 'delete',
+            data: { confirm: "Are you sure you want to delete this preference?" },
+            class: 'fa fa-trash' %>
+
+            <!-- Button trigger modal -->
+
+          </div>
+        </div>
+        <% end %>
+
+        <button type="button" class="fas fa-plus p-2 mb-1 btn btn-primary text-white w-100" data-toggle="modal" data-target="#category-modal-<%= category.id %>">
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="category-modal-<%= category.id %>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Add New Category</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= simple_form_for [category, Preference.new] do |f| %>
+                <%= f.input :name %>
+                <%= f.input :description %>
+              </div>
+              <div class="modal-footer">
+                <%= f.submit 'Create', class: 'btn btn-success' %>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
     <% end %>
   </section>

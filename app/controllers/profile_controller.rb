@@ -3,6 +3,7 @@ class ProfileController < ApplicationController
   def dashboard
     @bookings = Booking.where(user: current_user)
     @category = Category.new
+    @preference = Preference.new
     authorize current_user
     qr_code
   end
