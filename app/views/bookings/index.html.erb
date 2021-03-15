@@ -31,10 +31,12 @@
 
               <%= f.hidden_field :user, value: @user.secure_id %>
               <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+              <p id="error-message"></p>
               <%= f.button :submit, "Check availability",class: "search_uid_bookings"%>
             <% end %>
           </div>
         </div>
+
 
 
     <div class="card mb-4 p-2 m-2 main-preferences">

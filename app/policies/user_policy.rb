@@ -6,4 +6,8 @@ class UserPolicy < ApplicationPolicy
   def my_bookings?
     dashboard?
   end
+
+  def index?
+    user.restaurant_owner?
+  end
 end
