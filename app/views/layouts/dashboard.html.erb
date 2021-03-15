@@ -16,11 +16,15 @@
     <div class="page-container vh-100 overflow-scroll position-relative">
 
       <%= render 'shared/flashes' %>
-     <div class="main-container mb-5">
+     <div class="main-container">
 
       <!-- USER DESCRIPTION -->
       <section class="d-flex pb-2">
-        <%= image_tag "placeholder-alex.jpg", class: "avatar mr-2" %>
+        <% if current_user.avatar.attached? %>
+          <%= cl_image_tag current_user.avatar.key, class: "avatar mr-2"  %>
+        <% else %>
+          <%= image_tag "placeholder-alex.jpg", class: "avatar mr-2" %>
+        <% end %>
 
         <h2 class="mt-2">Welcome <%= current_user.first_name %>! </h2>
         <!-- <h2><%= current_user.phone_number %>! </h2>
@@ -52,6 +56,10 @@
             <h6>Home</h6>
           <% end %>
 
+        <%= link_to edit_profile_path, class: "crud-items" do %>
+          <i class="fas fa-user-edit"></i>
+          <h6>Profile</h6>
+        <% end %>
 
         <%= link_to my_bookings_path, class: "crud-items" do %>
           <i class="fas fa-book"></i>
@@ -63,6 +71,8 @@
           <h6>Add</h6>
         <% end %>
       </div>
+
+
 
 
       <!-- Modal -->
