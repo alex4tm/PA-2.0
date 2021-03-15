@@ -1,10 +1,14 @@
 <div class="d-flex">
   <div class="booking">
+
+    <div>Booking for: <%= @user.last_name %> <%= @user.first_name %> </div>
+    <div><%= start_date.to_date.strftime('%B %e at %l:%M %p') %></div>
+
     <%= simple_form_for booking do |f| %>
-      <%= f.input :notes %>
+      <%= f.input :notes, label: "Add notes", required: false %>
       <%= f.hidden_field :start_date, value: start_date %>
       <%= f.hidden_field :user, value: user.id %>
-      <%= f.input :number_of_guests, collection: Booking::NUMBER %>
+      <%= f.input :number_of_guests, collection: Booking::NUMBER, label: "Number of guests", required: false %>
       <%= f.submit 'Book', class: 'btn btn-success' %>
     <% end %>
   </div>
