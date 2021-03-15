@@ -1,1 +1,30 @@
-<h1>banana</h1>
+<h1>Edit profile</h1>
+      <%= simple_form_for(@resource || current_user, as: :user, url: registration_path(:user), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :phone_number %>
+          <%= f.input :avatar, as: :file %>
+
+          <%= f.input :password,
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :current_password,
+                      hint: "we need your current password to confirm your changes",
+                      required: true,
+                      input_html: { autocomplete: "current-password" } %>
+
+
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Update", class: "btn btn-primary" %>
+        </div>
+      <% end %>

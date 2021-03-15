@@ -15,6 +15,7 @@ class ProfileController < ApplicationController
   end
 
   def edit_profile
+    @resource ||= current_user
     authorize current_user
   end
 
