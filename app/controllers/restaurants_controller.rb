@@ -22,7 +22,7 @@ class RestaurantsController < ApplicationController
 
     @bookings = Booking.all.order(created_at: :DESC)
     @search_word = "All"
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = current_user.restaurant
     authorize @restaurant
   end
 

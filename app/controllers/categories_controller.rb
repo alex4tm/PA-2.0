@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
     @category.update(category_params)
     authorize @category
 
-    redirect_to dashboard_path(@category)
+    redirect_to dashboard_path
   end
 
   def destroy

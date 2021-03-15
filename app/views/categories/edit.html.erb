@@ -1,6 +1,16 @@
-<h2>Edit <%= @category.name %> </h2>
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3 p-5 ">
+      <h2>EDIT <%= @category.name %> </h2>
 
-<%= simple_form_for (@category) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit 'Update', method: 'patch', class: 'btn btn-flat' %>
-<% end %>
+      <%= simple_form_for (@category) do |f| %>
+      <%= f.input :name %>
+      <%= f.submit 'Update', method: 'patch', class: 'btn btn-primary' %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+

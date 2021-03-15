@@ -8,6 +8,9 @@ class BookingPolicy < ApplicationPolicy
 
   # copy these from application_policy.rb and set to true first
   # once you have set up all applications set to FALSE specific actions
+  def index?
+    user.restaurant_owner?
+  end
 
   def show?
     record.restaurant.user == user
