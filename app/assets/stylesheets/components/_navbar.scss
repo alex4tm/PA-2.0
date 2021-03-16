@@ -16,9 +16,20 @@
     color: white !important;
 }
 
+.navbar-right {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  margin-top: 9px;
+}
+
 @media only screen and (max-width: 600px) {
   .navbar-logo {
-    width: 160px;
+    width: 140px;
+  }
+
+  .navbar-right h6 {
+    font-size: 13px;
   }
 }
 
