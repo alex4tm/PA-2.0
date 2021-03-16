@@ -10,6 +10,7 @@ class ProfileController < ApplicationController
   end
 
   def my_bookings
+    @category = Category.new
     @bookings = Booking.where(user: current_user)
     authorize current_user
   end

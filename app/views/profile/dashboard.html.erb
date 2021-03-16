@@ -3,7 +3,7 @@
 <!-- Take navbar from shared components -->
 
   <!-- USER FUTURE BOOKINGS -->
-  <section>
+  <section style="background-image: 'https://images.unsplash.com/photo-1610569066505-5e4f79e44dd6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTZ8fHVzZXIlMjBleHBlcmllbmNlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'">
     <div id="preference-card" class="dash-white-card">
       <h6>Your preferences</h6>
     </div>
@@ -37,11 +37,11 @@
 
                       <%= simple_form_for (category) do |f| %>
                       <%= f.input :name %>
+                      <%= f.submit 'Update', class: 'btn btn-primary' %>
+                    <% end %>
                     </div>
                     <div class="modal-footer">
-                      <%= f.submit 'Update', class: 'btn btn-primary' %>
                     </div>
-                    <% end %>
                   </div>
                 </div>
               </div>
@@ -82,10 +82,10 @@
                      <%= simple_form_for [category, preference] do |f| %>
                      <%= f.input :name %>
                      <%= f.input :description %>
-                   </div>
-                   <div class="modal-footer">
                     <%= f.submit 'Create', class: 'btn btn-primary' %>
                     <% end %>
+                   </div>
+                   <div class="modal-footer">
                   </div>
                 </div>
               </div>
@@ -120,10 +120,10 @@
                 <%= simple_form_for [category, Preference.new] do |f| %>
                 <%= f.input :name %>
                 <%= f.input :description %>
-              </div>
-              <div class="modal-footer">
                 <%= f.submit 'Create', class: 'btn btn-success' %>
                 <% end %>
+              </div>
+              <div class="modal-footer">
               </div>
             </div>
           </div>
