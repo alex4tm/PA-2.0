@@ -1,7 +1,11 @@
 .availability {
-  padding: 10px;
-  margin: 0px 10px;
-  background-color: #F4F4F4;
+  padding: 20px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 7px;
+  width: 450px;
+  box-shadow: 0 12px 34px -11px #7b7677;
+  text-align: -webkit-center;
 }
 
 .availability .form-control {
@@ -9,7 +13,7 @@
 }
 
 .fa-calendar-alt::before {
-  color: #1068efd6;
+  color: lightblue;
 }
 
 .booking {
@@ -33,7 +37,7 @@
   opacity: 0.9;
 }
 .search_uid .btn {
-  background-color: white;
+  background-color: lightblue;
   color: #6b707b;
 }
 
@@ -61,15 +65,21 @@
 
 .main-preferences {
   padding: 40px !important;
+  border-radius: 7px !important;
+}
+
+.main-preferences h2 {
+  margin: 0px auto;
+  padding-bottom: 20px !important;
 }
 
 .search_uid_bookings {
-background-color: white;
 border-color: gray;
-color: #615f5f;
 opacity: 0.9;
 border-radius: 5px;
 border: none;
+color: black;
+background-color: lightblue;
 }
 
 #error-message {
@@ -77,5 +87,11 @@ border: none;
   font-weight: 200;
   font-size: 12px;
   opacity: 0.7;
+}
+
+ .restaurant-dashboard {
+  overflow-y: auto;
+  display: -webkit-box ;
+
 }
 

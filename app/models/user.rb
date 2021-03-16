@@ -10,6 +10,7 @@ class User < ApplicationRecord
             numericality: true,
             length: { :minimum => 10, :maximum => 15 }
   before_validation :reset, on: :create
+  has_one_attached :avatar
 
   def restaurant_owner?
     self.restaurant.present?
@@ -19,4 +20,5 @@ class User < ApplicationRecord
     new_uid = SecureRandom.hex(3)
     self.secure_id = new_uid
   end
+
 end
