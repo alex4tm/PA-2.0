@@ -29,6 +29,8 @@
         <h2 class="mt-2">Welcome <%= current_user.first_name %>! </h2>
         <!-- <h2><%= current_user.phone_number %>! </h2>
         <h2><%= current_user.email %>! </h2> -->
+
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "log-out-link" %>
       </section>
 
       <!-- HEX CODE OR QR CODE -->
