@@ -65,9 +65,23 @@ font-weight: bold;
   margin: 0 0 30px 0;
 }
 
-.hidden {
-  display: none;
+.qr-wrapper  {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+
+
+  &.show-animation {
+    max-height: 250px;
+    transition: max-height 1s ease-in-out;
+  }
 }
+
+
+
+// .hidden svg {
+//   height: 0;
+// }
 
 
 .qr-arrow{

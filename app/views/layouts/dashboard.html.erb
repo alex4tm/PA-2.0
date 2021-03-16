@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PA-2.0</title>
+    <title>You Know Me</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -41,8 +41,9 @@
           </p>
 
 
-
-          <span id="qr-code" class="open-close hidden"><%= @svg.html_safe %></span>
+          <div class="qr-wrapper">
+            <span id="qr-code" class="open-close"><%= @svg.html_safe %></span>
+          </div>
 
         </div>
       </section>
