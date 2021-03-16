@@ -32,9 +32,9 @@ Restaurant.create!(
 User.create!(
   email: "user@gmail.com",
   password: "123456",
-  first_name: "Lexi",
-  last_name: "Claudia",
-  username: "Lexi C.",
+  first_name: "Lexie",
+  last_name: "Vacca",
+  username: "Lexie V.",
   secure_id: "abcd12",
   phone_number: "+971562721100"
   )
