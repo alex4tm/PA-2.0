@@ -2,16 +2,17 @@
   <div id="preference-card" class="dash-white-card">
     <h6>Your Bookings</h6>
   </div>
+
   <% @bookings.each do |booking| %>
-    <div class="card-product mb-2 p-3 pb-4">
+    <div class="card-product mb-3 p-2 dash-white-card">
       <img src="https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" />
       <div class="card-product-infos d-flex flex-column align-items-center">
         <h4> <strong><%= booking.restaurant.name %></strong> </h4>
         <p> <%= booking.start_date.strftime("%d of %B, %Y") %> </p>
         <p> <%= booking.start_date.strftime("%I:%M %p")     %> </p>
         <p> number of guests :<%= booking.number_of_guests%> </p>
-     </div>
-   </div>
+      </div>
+    </div>
   <% end %>
 </section>
 

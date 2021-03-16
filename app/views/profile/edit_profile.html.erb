@@ -1,32 +1,37 @@
 <div id="preference-card" class="dash-white-card">
   <h6>Edit profile</h6>
 </div>
-      <%= simple_form_for(@resource || current_user, as: :user, url: registration_path(:user), html: { method: :put }) do |f| %>
-        <%= f.error_notification %>
 
-        <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :first_name %>
-          <%= f.input :last_name %>
-          <%= f.input :phone_number %>
-          <%= f.input :avatar, as: :file %>
+<div class="card mb-3 p-2 dash-white-card text-center">
+  <%= simple_form_for(@resource || current_user, as: :user, url: registration_path(:user), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
 
-          <%= f.input :password,
-                      hint: "leave it blank if you don't want to change it",
-                      required: false,
-                      input_html: { autocomplete: "new-password" } %>
-          <%= f.input :password_confirmation,
-                      required: false,
-                      input_html: { autocomplete: "new-password" } %>
-          <%= f.input :current_password,
-                      hint: "we need your current password to confirm your changes",
-                      required: true,
-                      input_html: { autocomplete: "current-password" } %>
+    <div class="form-inputs">
 
 
-        </div>
+      <%= f.input :email, required: true, autofocus: true %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :phone_number %>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Update", class: "btn btn-primary" %>
-        </div>
-      <% end %>
+      <%= f.input :avatar, as: :file, label: "Profile Photo" %>
+      <%= f.input :password,
+                  hint: "leave it blank if you don't want to change it",
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :current_password,
+                  hint: "we need your current password to confirm your changes",
+                  required: true,
+                  input_html: { autocomplete: "current-password" } %>
+
+
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Update", class: "btn btn-primary w-100" %>
+    </div>
+  <% end %>
+</div>
