@@ -80,6 +80,7 @@ border-radius: 5px;
 border: none;
 color: black;
 background-color: lightblue;
+
 }
 
 #error-message {
@@ -89,9 +90,21 @@ background-color: lightblue;
   opacity: 0.7;
 }
 
- .restaurant-dashboard {
-  overflow-y: auto;
-  display: -webkit-box ;
-
+.restaurant-dashboard {
+  background-size: cover;
+  background-position: 15% 35%;
+  background-repeat: no-repeat;
+  padding: 15px 0 20px 0;
 }
 
+.preferences-customer {
+  border-bottom: 1px solid lightgray;
+  margin: 0px auto;
+  margin-bottom: 35px;
+  font-weight: 900;
+}
+
+.searchbar {
+  margin: 0 auto;
+  width: 400px;
+}
