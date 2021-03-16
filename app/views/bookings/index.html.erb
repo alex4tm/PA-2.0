@@ -1,60 +1,68 @@
  <div class="restaurant-dashboard" style="background-image: linear-gradient(rgba(61,64,54,0.2),rgba(135,24,24,0.2)), url(https://images.unsplash.com/photo-1546195643-70f48f9c5b87?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)";>
-<!-- <img src="https://images.unsplash.com/photo-1567745218240-95b39d13de05?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8ZmluZSUyMGRpbmluZ3xlbnwwfHwwfGJsYWNr&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)" alt=""> -->
+  <!-- <img src="https://images.unsplash.com/photo-1567745218240-95b39d13de05?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8ZmluZSUyMGRpbmluZ3xlbnwwfHwwfGJsYWNr&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)" alt=""> -->
 
   <!-- START Display the user details based on the search -->
   <div class="container">
-    <div class="d-flex justify-content-between searchbar">
-      <%= form_tag bookings_path, method: :get do %>
+    <div class="card mb-4 p-2 m-2 main-preferences">
+      <div class="d-flex justify-content-between searchbar">
+        <%= form_tag bookings_path, method: :get do %>
         <div class="d-flex m-2">
           <%= text_field_tag :search,
           params[:search],
           class: "form-control",
-          placeholder: "Insert User ID"%>
-
+            placeholder: "Insert User ID"%>
             <%= submit_tag "🔍 Search", class: "search_uid_bookings ml-2 px-2 searchbar"  %>
-
-        </div>
-      <% end %>
-    </div>
-
-    <% if @user.nil? %>
-      <h6 class="p-3 m-3 rounded" style="color: red"><%= image_tag "https://media3.giphy.com/media/aYpmlCXgX9dc09dbpl/giphy.gif" %></h6>
-    <% else %>
-
-      <div class="card mb-4 p-2 m-2 main-preferences">
-        <h2><%= @user.last_name %> <%= @user.first_name %>'s Preferences</h2>
-        <div class="row">
-          <% @user.categories.each do |category| %>
-          <div class="col-12 col-sm-3">
-            <h3 class="preferences-customer"><%= category.name.capitalize %></h3>
-            <% category.preferences.each do |preference| %>
-            <ul class="preferences">
-              <li> <i class="fa fa-heart mx-1"></i> <%= preference.name.capitalize %>: <%= preference.description.capitalize %></li>
-            </ul>
-            <% end %>
           </div>
           <% end %>
         </div>
-      </div>
-
-      <div class="availability d-flex justify-content-around" id="availability">
-        <div class="form-wrapper mr-3" style="width: 250px;">
-          <h1><i class="far fa-calendar-alt"></i></h1>
-
-          <%= simple_form_for(:booking_search,
-            method: "get",
-            url: available_bookings_path,
-            remote: true ) do |f| %>
-            <%= f.hidden_field :user, value: @user.secure_id %>
-            <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-            <p id="error-message"></p>
-            <%= f.button :submit, "Check availability",class: "search_uid_bookings"%>
-          <% end %>
+        <% if @user.nil? %>
+        <h6 class="p-3 m-3 rounded d-flex justify-content-center" style="color: red"><%= image_tag "https://media3.giphy.com/media/aYpmlCXgX9dc09dbpl/giphy.gif", class: "round-robot" %></h6>
+        <% else %>
+        <div class="profile-calendar">
+          <div class="user-profile">
+            <h2><%= @user.username %>'s Profile</h2>
+            <div class="user-info">
+              <% if @user.avatar.attached? %>
+              <%= cl_image_tag @user.avatar.key, class: "avatar ml-2 mr-2 mb-2 avatar-bookings"  %>
+              <% else %>
+              <%= image_tag "placeholder-alex.jpg", class: "avatar mr-2 mb-2" %>
+              <% end %>
+              <span class="far fa-envelope p-2 m-1"> <%= @user.email %></span>
+              <span class="far fa-user p-2 m-1"> <%= @user.first_name %> <%= @user.last_name %></span>
+              <span class="fas fa-phone-square-alt p-2 m-1"> <%= @user.phone_number %></span>
+            </div>
+          </div>
+          <div class="availability d-flex justify-content-around" id="availability">
+            <div class="form-wrapper mr-3" style="width: 250px;">
+              <h1><i class="far fa-calendar-alt"></i></h1>
+              <%= simple_form_for(:booking_search,
+                method: "get",
+                url: available_bookings_path,
+                remote: true ) do |f| %>
+                <%= f.hidden_field :user, value: @user.secure_id %>
+                <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+                <p id="error-message"></p>
+                <%= f.button :submit, "Check availability",class: "search_uid_bookings"%>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <% @user.categories.each do |category| %>
+            <div class="col-12 col-sm-3">
+              <h3 class="preferences-customer"><%= category.name.capitalize %></h3>
+              <% category.preferences.each do |preference| %>
+              <ul class="preferences">
+                <li> <i class="fa fa-heart mx-1"></i> <%= preference.name.capitalize %>: <%= preference.description.capitalize %></li>
+              </ul>
+              <% end %>
+            </div>
+            <% end %>
+          </div>
         </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-</div>
+    </div>
 
     <!-- END of user details -->
 

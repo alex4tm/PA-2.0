@@ -1,10 +1,9 @@
 .availability {
-  padding: 20px;
-  margin: 20px auto;
-  background-color: white;
+  padding: 10px;
+  background-color: #d7e9ef;
   border-radius: 7px;
-  width: 450px;
-  box-shadow: 0 12px 34px -11px #7b7677;
+  width: 350px;
+  box-shadow: 0 5px 9px -5px #7b7677;
   text-align: -webkit-center;
 }
 
@@ -13,7 +12,7 @@
 }
 
 .fa-calendar-alt::before {
-  color: lightblue;
+  color: #27428e;
 }
 
 .booking {
@@ -69,8 +68,8 @@
 }
 
 .main-preferences h2 {
-  margin: 0px auto;
-  padding-bottom: 20px !important;
+  margin: 10px;
+  padding-bottom: 10px !important;
 }
 
 .search_uid_bookings {
@@ -79,8 +78,8 @@ opacity: 0.9;
 border-radius: 5px;
 border: none;
 color: black;
-background-color: lightblue;
-
+background-color: #78bed5;
+margin-top: 15px;
 }
 
 #error-message {
@@ -108,3 +107,46 @@ background-color: lightblue;
   margin: 0 auto;
   width: 400px;
 }
+
+.searchbar form {
+  margin-bottom: 20px;
+  box-shadow: 0 5px 9px -5px #7b7677;
+  background: #f2f3f3;
+}
+.user-profile {
+  background-color: #d7e9ef;
+  padding: 10px;
+  border-radius: 7px;
+  width: fit-content;
+  box-shadow: 0 5px 9px -5px #7b7677;
+}
+
+.round-robot {
+  border-radius: 50%;
+}
+
+.profile-calendar {
+display: flex;
+justify-content: space-around;
+margin-bottom: 50px;
+align-items: stretch;
+}
+
+.user-info {
+  display: inline-grid;
+  width: 350px;
+}
+
+.user-info span {
+  margin-left: 5px;
+  padding: 10px;
+}
+
+.avatar-bookings {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
