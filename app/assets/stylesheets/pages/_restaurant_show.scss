@@ -132,6 +132,10 @@ margin-top: 15px;
   border-radius: 50%;
 }
 
+.text-bold{
+  font-weight: bolder !important;
+}
+
 .profile-calendar {
 display: flex;
 justify-content: space-around;
@@ -147,6 +151,7 @@ align-items: stretch;
 .user-info span {
   margin-left: 5px;
   padding: 10px;
+  font-family: sans-serif;
 }
 
 .avatar-bookings {
