@@ -1,49 +1,106 @@
-<div class="container">
 
-<h5 class="p-2">Welcome <%= current_user.first_name %></h5>
+<div class="banner mt-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1582920980795-2f97b0834c58?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cmVzdGF1cmFudHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60);">
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1582920980795-2f97b0834c58?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cmVzdGF1cmFudHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60);">
-
-
-
-       <%= form_tag bookings_path, method: :get do %>
+       <%= form_tag bookings_path,class: "d-flex justify-content-center", method: :get do %>
         <div class="d-flex justify-content-between search_uid">
-
           <%= text_field_tag :search,
             params[:search],
             class: "form-control",
             placeholder: "Insert User ID"
           %>
           <%= submit_tag "🔍 Search", class: "btn"  %>
-        <% end %>
         </div>
-      <div class="card-header card text-white bg-dark mb-3" style="max-width: 18rem;">
+        <% end %>
+<!--       <div class="card-header card text-white bg-dark mb-3" style="max-width: 18rem;">
         <div>
           <h1> <%= @restaurant.name.capitalize %> </h1>
         </div>
         <div class="card-body">
           <p class="card-text"><%= "⭐" *  @restaurant.rating %>  </p>
         </div>
-      </div>
+      </div> -->
 </div>
 
-  <div class="d-flex justify-content-between pt-3" >
+<div class="container">
 
-  </div>
+<!--   <h1 class="ml6">
+    <span class="text-wrapper">
+      <span class="letters">Beautiful Questions</span>
+    </span>
+  </h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+ -->
+
   <div class="restaurants-wrapper">
-      <h3 class="text-center">Latest bookings</h3>
     <div class="row">
+      <h3 class=" text-centering col-12">Latest bookings</h3>
       <% @bookings.each do |booking| %>
-        <div class=" col-12 col-sm-6">
-          <div class="card-product mt-2 rounded">
-            <div class="card-product-infos ">
-              <h2><%= "#{booking.user.last_name}, " "#{booking.user.first_name}" %></h2>
-              <p><i class="mx-2 far fa-calendar-check"></i>  <%= booking.start_date.strftime('%B %e at %l:%M %p') %></p>
-              <p><i class="mx-2 fas fa-user-friends"></i> <%= booking.number_of_guests %></p>
-              <p><i class="mx-2 far fa-comment"></i> <%= booking.notes %></p>
+
+        <!-- Button trigger modal -->
+
+
+          <div class=" col-12 col-sm-6" data-toggle="modal" data-target="#booking-<%= booking.id %>">
+
+            <div class="mt-2 card-product mb-1 p-2 dash-white-card">
+              <div class="card-product-infos ">
+                <h2><%= "#{booking.user.last_name}, " "#{booking.user.first_name}" %></h2>
+                <p><i class="mx-2 far fa-calendar-check"></i>  <%= booking.start_date.strftime('%B %e at %l:%M %p') %></p>
+                <p><i class="mx-2 fas fa-user-friends"></i> <%= booking.number_of_guests %></p>
+                <p><i class="mx-2 far fa-comment"></i> <%= booking.notes %></p>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="booking-<%= booking.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header d-flex align-item-center">
+                <h2 class="modal-title" id="exampleModalLabel">
+                   <% if booking.user.avatar.attached? %>
+                  <%= cl_image_tag booking.user.avatar.key, class: "avatar ml-2 mr-2 mb-2 avatar-bookings"  %>
+                  <% else %>
+                  <%= image_tag "placeholder-alex.jpg", class: "avatar mr-2 mb-2" %>
+                  <% end %>
+                </h2>
+                <h2 class="modal-title d-flex align-item-center" id="exampleModalLabel"><%= "#{booking.user.last_name}, " "#{booking.user.first_name}" %></h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="user-info">
+                  <span class="far fa-envelope p-2 m-1"> <%= booking.user.email %> <%= booking.user.id %></span>
+                  <span class="far fa-user p-2 m-1"> <%= booking.user.first_name %> <%= booking.user.last_name %></span>
+                  <span class="fas fa-phone-square-alt p-2 m-1"> <%= booking.user.phone_number %></span>
+                </div>
+
+                <p><i class="mx-2 far fa-calendar-check"></i>  <%= booking.start_date.strftime('%B %e at %l:%M %p') %></p>
+                <p><i class="mx-2 fas fa-user-friends"></i> <%= booking.number_of_guests %></p>
+                <p><i class="mx-2 far fa-comment"></i> <%= booking.notes %></p>
+
+                <div class="row">
+                  <% booking.user.categories.each do |category| %>
+                  <div class="col-12 col-sm-3">
+                    <h3 class="preferences-customer"><%= category.name.capitalize %></h3>
+                    <% category.preferences.each do |preference| %>
+                    <ul class="preferences">
+                      <li> <i class="fa fa-heart mx-1"></i> <%= preference.name.capitalize %>: <%= preference.description.capitalize %></li>
+                    </ul>
+                    <% end %>
+                  </div>
+                  <% end %>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+
       <% end %>
     </div>
 
