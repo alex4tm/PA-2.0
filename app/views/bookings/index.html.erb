@@ -20,16 +20,16 @@
         <% else %>
         <div class="profile-calendar">
           <div class="user-profile">
-            <h2><%= @user.username %>'s Profile</h2>
+            <h3><%= @user.username %>'s Profile</h3>
             <div class="user-info">
               <% if @user.avatar.attached? %>
               <%= cl_image_tag @user.avatar.key, class: "avatar ml-2 mr-2 mb-2 avatar-bookings"  %>
               <% else %>
               <%= image_tag "placeholder-alex.jpg", class: "avatar mr-2 mb-2" %>
               <% end %>
-              <span class="far fa-envelope p-2 m-1"> <%= @user.email %></span>
-              <span class="far fa-user p-2 m-1"> <%= @user.first_name %> <%= @user.last_name %></span>
-              <span class="fas fa-phone-square-alt p-2 m-1"> <%= @user.phone_number %></span>
+              <span class="p-2 m-1"> <i class="far fa-envelope"></i>  <%= @user.email %></span>
+              <span class="p-2 m-1"><i class="far fa-user"></i> <%= @user.first_name %> <%= @user.last_name %></span>
+              <span class="p-2 m-1"> <i class="fas fa-phone-square-alt"></i> <%= @user.phone_number %></span>
             </div>
           </div>
           <div class="availability d-flex justify-content-around" id="availability">
@@ -53,7 +53,13 @@
               <h3 class="preferences-customer"><%= category.name.capitalize %></h3>
               <% category.preferences.each do |preference| %>
               <ul class="preferences">
-                <li> <i class="fa fa-heart mx-1"></i> <%= preference.name.capitalize %>: <%= preference.description.capitalize %></li>
+                <li>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-heart mx-1 mr-2"></i> <h6 class="text-bold m-0"><%= preference.name.capitalize %></h6>
+                  </div>
+                  <p class="ml-4"><%= preference.description.capitalize %></p>
+
+               </li>
               </ul>
               <% end %>
             </div>

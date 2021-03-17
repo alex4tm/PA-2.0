@@ -1,7 +1,7 @@
 <div class="d-flex">
   <div class="booking">
 
-    <div>Booking for: <%= @user.last_name %> <%= @user.first_name %> </div>
+    <div>Booking for: <%= @user.first_name %> <%= @user.last_name %>  </div>
     <div><%= start_date.to_date.strftime('%B %e at %l:%M %p') %></div>
 
     <%= simple_form_for booking do |f| %>
