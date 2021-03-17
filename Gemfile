@@ -35,6 +35,8 @@ gem 'devise'
 gem 'rqrcode'
 gem "simple_calendar", "~> 2.4"
 
+gem 'geocoder'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
