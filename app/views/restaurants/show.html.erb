@@ -1,8 +1,14 @@
 
-<div class="banner mt-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1582920980795-2f97b0834c58?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cmVzdGF1cmFudHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60);">
+<div class="banner mt-3 d-flex justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1553944384-ffdc4fd8f2fa?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTU4fHxmaW5lJTIwZGluaW5nfGVufDB8MHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);">
+      <h1 class="ml6 restaurant_name">
+    <span class="text-wrapper">
+      <span class="letters"> <%= @restaurant.name.capitalize %> </span>
+    </span>
+  </h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
-       <%= form_tag bookings_path,class: "d-flex justify-content-center", method: :get do %>
-        <div class="d-flex justify-content-between search_uid">
+       <%= form_tag bookings_path,class: "d-flex justify-content-center align-items-center", method: :get do %>
+        <div class="d-flex  justify-content-between search_uid">
           <%= text_field_tag :search,
             params[:search],
             class: "form-control",
