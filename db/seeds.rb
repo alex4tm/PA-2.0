@@ -13,21 +13,72 @@ Booking.destroy_all
 User.destroy_all
 Restaurant.destroy_all
 
-Restaurant.create!(
+zuma = Restaurant.new(
   name: 'Zuma',
-  address: 'Down town - Dubai',
+  address: 'DIFC- Dubai',
   tables_capacity: 4,
   category: 'Japanese',
   rating: 5
   )
+file = URI.open('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1867&q=80')
+zuma.photo.attach(io: file, filename: 'restaurant.png', content_type: 'image/png')
+zuma.save!
 
-Restaurant.create!(
+
+al_muntaha = Restaurant.new(
   name: 'Al Muntaha',
   address: 'Burj Al Arab - Dubai',
   tables_capacity: 10,
   category: 'International',
   rating: 5
   )
+file = URI.open('https://www.timeoutdubai.com/public/styles/full_img/public/images/2014/12/04/2014_almuntahaburnch_base.jpg?itok=UD5E5sCm')
+al_muntaha.photo.attach(io: file, filename: 'restaurant.png', content_type: 'image/png')
+al_muntaha.save!
+
+
+
+la_serre = Restaurant.new(
+  name: 'La Serre',
+  address: 'Downtown - Dubai',
+  tables_capacity: 6,
+  category: 'French',
+  rating: 5
+  )
+file = URI.open('https://www.hotelnewsme.com/wp-content/uploads/2020/08/La-Serre-Boulangerie.jpg')
+la_serre.photo.attach(io: file, filename: 'restaurant.png', content_type: 'image/png')
+la_serre.save!
+
+
+
+il_borro = Restaurant.new(
+  name: 'Il Borro Tuscan Bistro',
+  address: 'Jumeirah Al Naseem - Dubai',
+  tables_capacity: 15,
+  category: 'Italian',
+  rating: 5
+  )
+file = URI.open('https://eatapp.co/dubai-restaurants/images/il-borro-tuscan-bistro-madinat-jumeirah-restaurant-1.jpg')
+il_borro.photo.attach(io: file, filename: 'restaurant.png', content_type: 'image/png')
+il_borro.save!
+
+
+
+ossiano = Restaurant.new(
+  name: 'Ossiano',
+  address: 'The Palm Jumeirah - Dubai',
+  tables_capacity: 4,
+  category: 'Seafood',
+  rating: 5
+  )
+file = URI.open('https://whatson.ae/wp-content/uploads/2018/02/sliderossiano11-300x203.jpg')
+ossiano.photo.attach(io: file, filename: 'restaurant.png', content_type: 'image/png')
+ossiano.save!
+
+
+
+
+
 
 User.create!(
   email: "user@gmail.com",
@@ -70,9 +121,9 @@ User.create!(
   phone_number: "+971562721100"
   )
 
-alergies = Category.create!(
+allergies = Category.create!(
   user: User.first,
-  name: "Alergies"
+  name: "Allergies"
   )
 
 drinks = Category.create!(
@@ -91,13 +142,13 @@ seating = Category.create!(
   )
 
 Preference.create!(
-  category: alergies,
-  name: "Seafood",
+  category: allergies,
+  name: "Dairy",
   description: "severe reaction"
   )
 
 Preference.create!(
-  category: alergies,
+  category: allergies,
   name: "Gluten",
   description: "mild reaction"
   )
@@ -122,14 +173,20 @@ Preference.create!(
 
 Preference.create!(
   category: drinks,
+  name: "Red Wine",
+  description: "Ribera del Duero"
+  )
+
+Preference.create!(
+  category: drinks,
   name: "Cocktails",
-  description: "Caipirinha"
+  description: "Negroni"
   )
 
 Preference.create!(
   category: food,
   name: "Bread",
-  description: "Wholegrain"
+  description: "Wholegrain Gluten free"
   )
 
 Preference.create!(
