@@ -2,8 +2,12 @@
   justify-content: space-between;
   background: #393f45;
   color: white;
+  height: 70px
 }
 
+.navbar-logo {
+  height: 60px !important;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -26,6 +30,7 @@
 @media only screen and (max-width: 600px) {
   .navbar-logo {
     width: 140px;
+    height: 60px !important;
   }
 
   .navbar-right h6 {
