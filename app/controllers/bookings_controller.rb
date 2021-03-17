@@ -3,6 +3,7 @@ require 'twilio-ruby'
 class BookingsController < ApplicationController
   before_action :set_restaurant, only: [:new, :create, :index, :available]
 
+
   def index
     authorize current_user
     # find the user based on the secure ID
