@@ -118,8 +118,12 @@ body, html {
 
 .img-3 {
   position: absolute;
-  top: 361px;
-  left: 100px;
+  height: 185px !important;
+  width: 270px !important;
+  position: absolute;
+  top: 360px;
+  left: 35px;
+  box-shadow: 3px 2px 5px black;
   box-shadow: 3px 2px 5px black;
 }
 
@@ -127,7 +131,7 @@ body, html {
   align-items: center;
   margin-top: 55px !important ;
   justify-content: space-between;
-  margin-bottom: 55px !important;
+  margin-bottom: 60px !important;
 }
 
 #typed-text1 {
