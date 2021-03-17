@@ -33,6 +33,7 @@ gem "pundit"
 gem 'devise'
 
 gem 'rqrcode'
+gem "simple_calendar", "~> 2.4"
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'

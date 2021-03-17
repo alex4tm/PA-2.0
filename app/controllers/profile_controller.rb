@@ -12,6 +12,8 @@ class ProfileController < ApplicationController
   def my_bookings
     @category = Category.new
     @bookings = Booking.where(user: current_user)
+    start_date = params.fetch(:start_date, Date.today).to_date
+    @b = Booking.where(start_date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
     authorize current_user
   end
 

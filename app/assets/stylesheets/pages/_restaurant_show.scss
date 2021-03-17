@@ -150,3 +150,37 @@ align-items: stretch;
   border-radius: 50%;
 }
 
+.calendar-date {
+  color: #336773 !important;
+  margin-bottom: 0px !important;
+}
+
+.calendar-main {
+  font-weight: 300;
+}
+
+.calendar-main a {
+    border: 1px solid;
+    margin-bottom: 10px !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    border-color: lightred;
+    border-color: #afcccc;
+    background-color: #8bc6e8;
+}
+
+.calendar-main span {
+  margin: 10px 15px;
+}
+
+.calendar-main .table  {
+  text-align: center;
+}
+
+.table-striped {
+    text-align-last: center;
+  }
+.calendarbody p {
+  margin: 0px !important;
+}
