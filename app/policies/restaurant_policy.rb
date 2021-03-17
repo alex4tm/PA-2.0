@@ -12,4 +12,8 @@ class RestaurantPolicy < ApplicationPolicy
   def show?
     user.restaurant_owner?
   end
+
+  def navigate?
+    true
+  end
 end

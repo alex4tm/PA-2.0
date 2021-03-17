@@ -19,12 +19,16 @@ class RestaurantsController < ApplicationController
   # end
 
   def show
-
     @bookings = Booking.all.order(created_at: :DESC)
     @search_word = "All"
     @restaurant = current_user.restaurant
     authorize @restaurant
     @booking = Booking.find_by(params[:booking_id])
+  end
+
+  def navigate
+    @restaurant = Restaurant.find(params[:id])
+    authorize @restaurant
   end
 
   private

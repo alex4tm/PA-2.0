@@ -45,7 +45,7 @@ la_serre = Restaurant.new(
   category: 'French',
   rating: 5
   )
-file = URI.open('https://www.hotelnewsme.com/wp-content/uploads/2020/08/La-Serre-Boulangerie.jpg')
+file = URI.open('https://www.caterermiddleeast.com/public/images/2019/05/20/spring2.jpg')
 la_serre.photo.attach(io: file, filename: 'restaurant.png', content_type: 'image/png')
 la_serre.save!
 

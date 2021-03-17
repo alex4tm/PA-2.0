@@ -8,12 +8,14 @@ Rails.application.routes.draw do
   get "/dashboard", to: 'profile#dashboard'
   get "/my_bookings", to: 'profile#my_bookings'
   get "/edit_profile", to: 'profile#edit_profile'
+  get "/restaurants/:id/navigate", to: 'restaurants#navigate', as: :navigate
 
   resources :categories, except: [:show] do
     resources :preferences, except: [:show]
   end
-  resource :restaurants, only: [:show] do
-  end
+
+  resource :restaurants, only: [:show]
+
   resources :bookings, only: [:new, :create, :index] do
     collection do
       get :available
