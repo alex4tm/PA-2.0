@@ -10,6 +10,7 @@ require("channels")
 
 import { loadDynamicBannerText } from '../components/banner';
 import { flipQr } from '../components/qr';
+import { text } from '../components/text';
 
 import { initFlatpickr } from "../plugins/flatpickr";
 
@@ -40,4 +41,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   loadDynamicBannerText();
   flipQr();
+  text();
 });

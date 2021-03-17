@@ -24,6 +24,7 @@ class RestaurantsController < ApplicationController
     @search_word = "All"
     @restaurant = current_user.restaurant
     authorize @restaurant
+    @booking = Booking.find_by(params[:booking_id])
   end
 
   private
