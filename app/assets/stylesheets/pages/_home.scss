@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+
 }
 
 .value {
@@ -14,6 +15,7 @@
   box-shadow: 0 0 8px -6px black;
   flex-direction: column;
   align-items: start;
+    height: 210px !important;
 }
 
 .value1 {
@@ -30,6 +32,7 @@
   width: 50px;
   font-size: 40px;
   color: #c74848;
+
 }
 .value2 p {
   font-size: smaller !important;
@@ -85,8 +88,8 @@ body, html {
 
 .landing-images {
   height: 500px;
-  width: 43%;
-  margin: 10px;
+  width: 40%;
+  margin: -10px;
   padding: 20px;
   position: relative;
 }
@@ -124,7 +127,7 @@ body, html {
   align-items: center;
   margin-top: 55px !important ;
   justify-content: space-between;
-  margin-bottom: 30px !important;
+  margin-bottom: 55px !important;
 }
 
 #typed-text1 {
