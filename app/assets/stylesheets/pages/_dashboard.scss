@@ -63,8 +63,16 @@ font-weight: bold;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 9px;
   animation: 1s ease all;
+  text-decoration: none;
 }
 
+.no-underline:hover{
+  text-decoration: none !important;
+}
+
+.dash-white-card a:hover {
+  text-decoration: none !important;
+}
 
 #qr-code svg {
   margin: 0 0 30px 0;

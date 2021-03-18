@@ -21,7 +21,7 @@
 </div>
 
   <% @bookings.each do |booking| %>
-    <%= link_to navigate_path(booking.restaurant) do %>
+    <%= link_to navigate_path(booking.restaurant), class: "no-underline" do %>
       <div class="card-product mb-3 p-2 dash-white-card">
         <% if booking.restaurant.photo.attached? %>
           <%= cl_image_tag booking.restaurant.photo.key %>
