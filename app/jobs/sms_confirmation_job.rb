@@ -12,10 +12,13 @@ class SmsConfirmationJob < ApplicationJob
 
     message = @client.messages
       .create(
-         body: "Your booking is confirmed at #{message}. We take care of your preferences :D",
+         body: "Your booking is confirmed at #{message}.\n
+         ✅ ✨ 😄 WE KNOW YOU, AND TAKE CARE OF YOUR PREFERENCES 🎉 🎂 🎉 ",
          from: 'whatsapp:+14155238886',
          to: "whatsapp:#{phone_number}"
        )
+
+    puts '@' * 20
     puts message.sid
   end
 end
