@@ -28,6 +28,7 @@
 
 .page-container {
   color: #353232;
+  background: linear-gradient(320deg, #062d28, transparent);
 }
 
 
@@ -253,4 +254,18 @@ body {
 .container {
   width: 90%;
   margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-container {
+    width: 70vw;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .main-container {
+    width: 40vw;
+    margin: 0 auto;
+  }
 }
