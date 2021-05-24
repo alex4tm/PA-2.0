@@ -28,7 +28,7 @@
 
 .page-container {
   color: #353232;
-  background: linear-gradient(320deg, #062d28, transparent);
+  background: linear-gradient(320deg, #186475, transparent);
 }
 
 
@@ -107,6 +107,7 @@ font-weight: bold;
 #info-wrapper{
   position: relative;
   padding: 10px;
+  margin-bottom: 0 !important;
 }
 
 .p {
@@ -171,6 +172,9 @@ font-weight: bold;
   box-sizing: border-box;
 }
 
+section {
+  margin-bottom: 3rem !important;
+}
 
 .bookings-box {
   border:1px solid black;
