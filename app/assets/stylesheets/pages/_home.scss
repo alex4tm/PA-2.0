@@ -15,7 +15,7 @@
   border-radius: 20px;
   box-shadow: 0 0 8px -6px black;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   height: 210px !important;
 }
 
@@ -138,11 +138,25 @@ body, html {
     display: flex !important;
     flex-direction: column !important;
   }
+  .valueproposition {
+    margin-top: 75px !important;
+    flex-direction: column;
+  }
+  .value {
+    margin-bottom: 1rem;
+    width: 65vw;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   #typed-text1 {
     font-size: 3rem;
+  }
+  .landing-images {
+    margin-left: 6rem !important;
+  }
+  .value {
+    height: auto !important;
   }
 }
 
