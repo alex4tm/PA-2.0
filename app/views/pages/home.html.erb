@@ -42,7 +42,19 @@
     <h1 id="typed-text1">YouKnowMe</h1>
     <h4 id="t">You name it , We save it</h4>
     <h6>Stop wasting your time - send your preferences and information the right way.</h6>
-    <p><a href="/users/sign_in" class="btn landing-btn">Start today</a></p>
+
+  <%= form_for @user, url: user_session_path, :method => "post" do |f| %>
+  <%= f.text_field :email, readonly: "true", hidden: "true" %>
+  <%= f.password_field :password, value: '123456', readonly: "true", hidden: "true" %>
+  <%= f.submit "User-demo", class: "btn landing-btn" %>
+  <% end %>
+
+
+<%= form_for @restaurant, url: user_session_path, :method => "post" do |f| %>
+<%= f.text_field :email, readonly: "true", hidden: "true" %>
+<%= f.password_field :password, value: '123456', readonly: "true", hidden: "true" %>
+<%= f.submit "Restaurant-demo", class: "btn landing-btn" %>
+<% end %>
 
 
   </div>
