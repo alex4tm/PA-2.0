@@ -3,6 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @user = User.first
-    @restaurant = User.find(98)
+    @restaurant = User.where(email: 'restaurant@gmail.com').first
   end
 end
