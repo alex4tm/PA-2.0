@@ -27,9 +27,9 @@
               <% else %>
               <%= image_tag "placeholder-alex.jpg", alt: 'avatar' ,class: "avatar mr-2 mb-2" %>
               <% end %>
-              <span class="p-2 m-1"> <i class="far fa-envelope"></i>  <%= @user.email %></span>
-              <span class="p-2 m-1"><i class="far fa-user"></i> <%= @user.first_name %> <%= @user.last_name %></span>
-              <span class="p-2 m-1"> <i class="fas fa-phone-square-alt"></i> <%= @user.phone_number %></span>
+              <h6 class="p-2 m-1"> <i class="fas fa-envelope"></i>  <%= @user.email %></h6>
+              <h6 class="p-2 m-1"><i class="fas fa-user"></i> <%= @user.first_name %> <%= @user.last_name %></h6>
+              <h6 class="p-2 m-1"> <i class="fas fa-mobile-alt"></i> <%= @user.phone_number %></h6>
             </div>
           </div>
           <div class="availability d-flex justify-content-around" id="availability">

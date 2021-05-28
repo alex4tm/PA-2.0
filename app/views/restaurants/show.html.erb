@@ -29,14 +29,6 @@
 
 <div class="container">
 
-<!--   <h1 class="ml6">
-    <span class="text-wrapper">
-      <span class="letters">Beautiful Questions</span>
-    </span>
-  </h1>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
- -->
-
   <div class="restaurants-wrapper">
     <div class="row">
       <h3 class=" text-centering col-12">Latest bookings</h3>
@@ -44,9 +36,7 @@
 
         <!-- Button trigger modal -->
 
-
           <div class=" col-12 col-sm-6" data-toggle="modal" data-target="#booking-<%= booking.id %>">
-
             <div class="mt-2 card-product mb-1 p-2 dash-white-card">
               <div class="card-product-infos ">
                 <h2><%= "#{booking.user.last_name}, " "#{booking.user.first_name}" %></h2>
@@ -56,10 +46,6 @@
               </div>
             </div>
           </div>
-
-
-
-
 
         <!-- Modal -->
         <div class="modal fade" id="booking-<%= booking.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -80,15 +66,13 @@
               </div>
               <div class="modal-body">
                 <div class="user-info">
-                  <span class="far fa-envelope p-2 m-1"> <%= booking.user.email %> <%= booking.user.id %></span>
-                  <span class="far fa-user p-2 m-1"> <%= booking.user.first_name %> <%= booking.user.last_name %></span>
-                  <span class="fas fa-phone-square-alt p-2 m-1"> <%= booking.user.phone_number %></span>
+                  <p><i class="mx-2 far fa-envelope"></i> <%= booking.user.email %></p>
+                  <p><i class="mx-2 far fa-user"></i> <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+                  <p><i class="mx-2 fas fa-phone-square-alt"></i> <%= booking.user.phone_number %></p>
+                  <p><i class="mx-2 far fa-calendar-check"></i>  <%= booking.start_date.strftime('%B %e at %l:%M %p') %></p>
+                  <p><i class="mx-2 fas fa-user-friends"></i> <%= booking.number_of_guests %></p>
+                  <p><i class="mx-2 far fa-comment"></i> <%= booking.notes %></p>
                 </div>
-
-                <p><i class="mx-2 far fa-calendar-check"></i>  <%= booking.start_date.strftime('%B %e at %l:%M %p') %></p>
-                <p><i class="mx-2 fas fa-user-friends"></i> <%= booking.number_of_guests %></p>
-                <p><i class="mx-2 far fa-comment"></i> <%= booking.notes %></p>
-
                 <div class="row">
                   <% booking.user.categories.each do |category| %>
                   <div class="col-12">
@@ -105,11 +89,8 @@
             </div>
           </div>
         </div>
-
-
       <% end %>
     </div>
-
   </div>
 
 
