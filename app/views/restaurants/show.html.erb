@@ -70,7 +70,7 @@
                    <% if booking.user.avatar.attached? %>
                   <%= cl_image_tag booking.user.avatar.key, class: "avatar ml-2 mr-2 mb-2 avatar-bookings"  %>
                   <% else %>
-                  <%= image_tag "avatar-placeholder.jpeg", alt: 'avatar', class: "avatar mr-2 mb-2" %>
+                  <%= image_tag "placeholder-alex.jpg", class: "avatar mr-2 mb-2" %>
                   <% end %>
                 </h2>
                 <h2 class="modal-title d-flex align-item-center" id="exampleModalLabel"><%= "#{booking.user.last_name}, " "#{booking.user.first_name}" %></h2>
