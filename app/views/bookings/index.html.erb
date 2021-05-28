@@ -25,7 +25,7 @@
               <% if @user.avatar.attached? %>
               <%= cl_image_tag @user.avatar.key, class: "avatar ml-2 mr-2 mb-2 avatar-bookings"  %>
               <% else %>
-              <%= image_tag "avatar-placeholder.jpeg", class: "avatar mr-2 mb-2" %>
+              <%= image_tag "avatar-placeholder.jpeg", alt: 'avatar' ,class: "avatar mr-2 mb-2" %>
               <% end %>
               <span class="p-2 m-1"> <i class="far fa-envelope"></i>  <%= @user.email %></span>
               <span class="p-2 m-1"><i class="far fa-user"></i> <%= @user.first_name %> <%= @user.last_name %></span>
