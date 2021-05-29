@@ -2,7 +2,7 @@
   <div class="booking">
 
     <div>Booking for: <%= @user.first_name %> <%= @user.last_name %>  </div>
-    <div><%= start_date.to_date.strftime('%B %e at %l:%M %p') %></div>
+    <div><%= start_date.to_datetime.strftime('%B %e at %l:%M %p') %></div>
 
     <%= simple_form_for booking do |f| %>
       <%= f.input :notes, label: "Add notes", required: false %>
