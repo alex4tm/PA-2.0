@@ -20,8 +20,8 @@
         <% else %>
         <div class="profile-calendar">
           <div class="user-profile">
-            <h3><%= @user.first_name %> <%= @user.last_name[0] %>'s Profile</h3>
             <div class="user-info">
+              <h3><%= @user.first_name %> <%= @user.last_name[0] %>'s Profile</h3>
               <% if @user.avatar.attached? %>
               <%= cl_image_tag @user.avatar.key, class: "avatar ml-2 mr-2 mb-2 avatar-bookings"  %>
               <% else %>
