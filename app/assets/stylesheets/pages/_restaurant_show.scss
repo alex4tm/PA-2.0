@@ -237,3 +237,14 @@ margin-top: 15px;
     font-size: small;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .search_uid {
+    flex-direction: column;
+    width: 100%;
+    .form-control {
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+  }
+}
