@@ -5,7 +5,7 @@
   <div class="container">
     <div class="card mb-4 p-2 m-2 main-preferences">
       <div class="d-flex justify-content-between searchbar">
-        <%= form_tag bookings_path, method: :get do %>
+        <%= form_tag bookings_path,class: "search-form", method: :get do %>
         <div class="d-flex m-2">
           <%= text_field_tag :search,
           params[:search],

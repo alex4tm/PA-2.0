@@ -2,7 +2,7 @@
   padding: 10px;
   background-color: #d7e9ef;
   border-radius: 7px;
-  width: 60vw;
+  width: 350px;
   box-shadow: 0 5px 9px -5px #7b7677;
   text-align: -webkit-center;
 }
@@ -16,7 +16,7 @@
 }
 
 .booking {
-  width: 30vw;
+  width: 300px;
 }
 
 .newbooking {
@@ -36,7 +36,7 @@
 }
 
 .search_uid {
-  width: 10rem;
+  width: 250px;
   top: 20px;
   left: 10px;
   opacity: 0.9;
@@ -124,7 +124,7 @@ margin-top: 15px;
   background-color: #d7e9ef;
   padding: 10px;
   border-radius: 7px;
-  width: 30vw;
+  width: fit-content;
   box-shadow: 0 5px 9px -5px #7b7677;
 }
 
@@ -139,13 +139,13 @@ margin-top: 15px;
 .profile-calendar {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
   align-items: stretch;
 }
 
 .user-info {
   display: inline-grid;
-  width: 60vw;
+  width: 350px;
 }
 
 .user-info span {
@@ -207,6 +207,7 @@ margin-top: 15px;
   }
   .availability {
     width: 100%;
+    margin-top: 2rem;
   }
   .user-info {
     display: flex;
@@ -214,5 +215,16 @@ margin-top: 15px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+  }
+  .searchbar {
+    width: 100%;
+    align-content: center;
+    justify-content: center !important;
+    & form {
+      width: 65vw !important;
+    }
+  }
+  .form-control {
+    width: 40vw;
   }
 }
