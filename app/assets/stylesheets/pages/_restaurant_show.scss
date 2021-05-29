@@ -2,7 +2,7 @@
   padding: 10px;
   background-color: #d7e9ef;
   border-radius: 7px;
-  width: 350px;
+  width: 60vw;
   box-shadow: 0 5px 9px -5px #7b7677;
   text-align: -webkit-center;
 }
@@ -16,7 +16,7 @@
 }
 
 .booking {
-  width: 300px;
+  width: 30vw;
 }
 
 .newbooking {
@@ -36,9 +36,8 @@
 }
 
 .search_uid {
-  width: 250px;
+  width: 10rem;
   top: 20px;
-  // position: absolute;
   left: 10px;
   opacity: 0.9;
 }
@@ -59,7 +58,8 @@
   padding: 10px;
   opacity: 0.9;
 }
-.card-text{
+
+.card-text {
   opacity: 1;
   font-size: 25px;
 }
@@ -124,7 +124,7 @@ margin-top: 15px;
   background-color: #d7e9ef;
   padding: 10px;
   border-radius: 7px;
-  width: fit-content;
+  width: 30vw;
   box-shadow: 0 5px 9px -5px #7b7677;
 }
 
@@ -137,15 +137,15 @@ margin-top: 15px;
 }
 
 .profile-calendar {
-display: flex;
-justify-content: space-around;
-margin-bottom: 50px;
-align-items: stretch;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 150px;
+  align-items: stretch;
 }
 
 .user-info {
   display: inline-grid;
-  width: 350px;
+  width: 60vw;
 }
 
 .user-info span {
@@ -192,7 +192,27 @@ align-items: stretch;
 
 .table-striped {
     text-align-last: center;
-  }
+}
+
 .calendarbody p {
   margin: 0px !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  .profile-calendar {
+    flex-direction: column !important;
+  }
+  .user-profile {
+    width: 100%;
+  }
+  .availability {
+    width: 100%;
+  }
+  .user-info {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -9,9 +9,13 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+  config.assets.prefix = "/assets_dev"
 
   # Show full error reports.
   config.consider_all_requests_local = true
+
+  config.serve_static_assets = false
+
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
