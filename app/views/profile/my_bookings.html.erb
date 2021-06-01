@@ -1,6 +1,6 @@
 <section>
 
-  <div id="preference-card" class="dash-white-card">
+  <div id="preference-card" class="dash-white-card bookings">
     <h6>Your Bookings</h6>
   </div>
 
@@ -22,7 +22,7 @@
   <div class="user_bookings">
     <% @bookings.each do |booking| %>
       <%= link_to navigate_path(booking.restaurant), class: "no-underline" do %>
-        <div class="card-product mb-3 p-2 dash-white-card">
+        <div class="card-product mb-3 p-2 dash-white-card bookings">
           <% if booking.restaurant.photo.attached? %>
             <%= cl_image_tag booking.restaurant.photo.key %>
           <% end %>

@@ -30,6 +30,7 @@
   background: linear-gradient(320deg, #186475, transparent);
 }
 
+
 .simple-calendar {
   display: flex;
   flex-direction: column;
@@ -125,7 +126,6 @@ font-weight: bold;
   text-decoration: none !important;
   color: black;
   box-shadow: 0px 0px 2px 1px white;
-  font-weight: bold;
 }
 .no-underline:hover {
   text-decoration: none !important;
@@ -139,12 +139,20 @@ font-weight: bold;
 .qr-wrapper  {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1s ease-in-out;
+  transition: ease-in 400ms;
+  transition-property: all;
+  transition-duration: 400ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
 
 
   &.show-animation {
     max-height: 250px;
-    transition: max-height 1s ease-in-out;
+    transition: ease-in 400ms;
+    transition-property: all;
+    transition-duration: 400ms;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
   }
 }
 
@@ -230,7 +238,6 @@ section {
   border:1px solid black;
   box-sizing: border-box;
 }
-
 
 .card-product {
   overflow: hidden;
@@ -321,12 +328,17 @@ body {
     justify-content: space-between;
   }
 
-  .dash-white-card {
+  .dash-white-card.bookings {
     width: 35vw;
   }
+
   #info-wrapper {
     width: 35vw;
     margin: 0 auto !important;
+  }
+  .main-dashboard {
+    margin: auto;
+    width: 55vw;
   }
 }
 
