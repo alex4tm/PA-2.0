@@ -10,8 +10,7 @@
 
 #preference-card{
   background-color: #8bc6e8;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 1.5rem auto !important;
   padding: 10px;
 
   h6 {
@@ -65,6 +64,8 @@ font-weight: bold;
   border-radius: 9px;
   animation: 1s ease all;
   text-decoration: none;
+  width: 100%;
+
 }
 
 .no-underline:hover{
@@ -90,13 +91,6 @@ font-weight: bold;
     transition: max-height 1s ease-in-out;
   }
 }
-
-
-
-// .hidden svg {
-//   height: 0;
-// }
-
 
 .qr-arrow{
   position: absolute;
@@ -260,16 +254,18 @@ body {
   margin: 0 auto;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 868px) {
   .main-container {
-    width: 70vw;
+    width: 85vw;
     margin: 0 auto;
+  }
+    .user_bookings {
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: space-between;
+  }
+  .dash-white-card {
+    width: 30vw;
   }
 }
 
-@media only screen and (min-width: 1440px) {
-  .main-container {
-    width: 40vw;
-    margin: 0 auto;
-  }
-}
