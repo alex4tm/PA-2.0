@@ -30,6 +30,53 @@
   background: linear-gradient(320deg, #186475, transparent);
 }
 
+.simple-calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .day {
+    height: 1rem !important;
+  }
+}
+
+.calendar-heading {
+  margin: 1.2rem 0;
+}
+
+.calendar-main a {
+  padding: 3px 5px !important;
+  text-decoration: none;
+}
+
+.calendar-main a:nth-of-type(1):before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f100";
+  margin-right: 0.3rem;
+  display: inline-block;
+  font-style: normal;
+  transition: transform 0.5s ease 0s, opacity 0.2s ease 0s;
+}
+
+.calendar-main a:nth-of-type(1):hover::before {
+  color: white;
+  transform: translate(-3px, 0px);
+}
+
+.calendar-main a:nth-of-type(2):after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f101";
+  margin-left: 0.3rem;
+  display: inline-block;
+  font-style: normal;
+  transition: transform 0.5s ease 0s, opacity 0.2s ease 0s;
+}
+
+.calendar-main a:nth-of-type(2):hover::after {
+  color: white;
+  transform: translate(3px, 0px);
+}
 
 section.welcome-box {
 background: white;
@@ -68,7 +115,7 @@ font-weight: bold;
 
 }
 
-.no-underline:hover{
+.no-underline:hover {
   text-decoration: none !important;
 }
 
@@ -265,7 +312,7 @@ body {
    justify-content: space-between;
   }
   .dash-white-card {
-    width: 30vw;
+    width: 35vw;
   }
 }
 

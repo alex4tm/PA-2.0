@@ -28,9 +28,9 @@
           <% end %>
           <div class="card-product-infos">
             <h6> <strong><%= booking.restaurant.name %></strong> </h6>
-            <p> <%= booking.start_date.strftime("%d of %B, %Y") %> </p>
-            <p> <%= booking.start_date.strftime("%I:%M %p")     %> </p>
-            <p> number of guests :<%= booking.number_of_guests%> </p>
+            <p><i class="mx-2 far fa-calendar-check"></i> <%= booking.start_date.strftime("%d of %B, %Y") %> </p>
+            <p><i class="mx-2 far fa-clock"></i> <%= booking.start_date.strftime("%I:%M %p")     %> </p>
+            <p><i class="mx-2 fas fa-user-friends"></i><%= booking.number_of_guests%> </p>
           </div>
         </div>
       <% end %>
