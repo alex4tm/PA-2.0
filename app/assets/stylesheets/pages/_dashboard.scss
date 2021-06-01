@@ -48,6 +48,14 @@
   text-decoration: none;
 }
 
+.calendar-main a:hover {
+  color: black !important;
+}
+
+.calendar-title {
+  font-size: larger;
+  font-weight: bolder;
+}
 .calendar-main a:nth-of-type(1):before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -112,15 +120,16 @@ font-weight: bold;
   animation: 1s ease all;
   text-decoration: none;
   width: 100%;
-
 }
-
+.dash-white-card:hover {
+  text-decoration: none !important;
+  color: black;
+  box-shadow: 0px 0px 2px 1px white;
+  font-weight: bold;
+}
 .no-underline:hover {
   text-decoration: none !important;
-}
-
-.dash-white-card a:hover {
-  text-decoration: none !important;
+  color: black;
 }
 
 #qr-code svg {
@@ -306,11 +315,12 @@ body {
     width: 85vw;
     margin: 0 auto;
   }
-    .user_bookings {
+  .user_bookings {
     display: flex;
     flex-wrap: wrap;
-   justify-content: space-between;
+    justify-content: space-between;
   }
+
   .dash-white-card {
     width: 35vw;
   }
