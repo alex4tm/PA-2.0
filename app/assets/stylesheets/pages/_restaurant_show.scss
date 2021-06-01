@@ -238,7 +238,7 @@ margin-top: 15px;
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
   .search_uid {
     flex-direction: column;
     width: 100%;
@@ -246,5 +246,15 @@ margin-top: 15px;
       margin-bottom: 1rem;
       width: fit-content;
     }
+  }
+  .main-preferences {
+    padding: 0.7rem !important;
+  }
+  .booking_search_starts_at input {
+    width: 45vw;
+    font-size: 0.7rem
+  }
+  #restaurant-container {
+    width: 100% !important;
   }
 }
