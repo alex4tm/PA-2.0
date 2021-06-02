@@ -30,7 +30,21 @@
   background: linear-gradient(320deg, #186475, transparent);
 }
 
+.modal-content {
+  border-radius: 0.5rem;
+}
 
+.close {
+  color: red;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.5;
+}
+
+.close:hover {
+  transform: rotate3d(0, 0, 1, 90deg);
+  color: red;
+  opacity: 1;
+}
 .simple-calendar {
   display: flex;
   flex-direction: column;

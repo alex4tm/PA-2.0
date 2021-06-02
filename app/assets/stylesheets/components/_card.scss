@@ -18,7 +18,7 @@ position: absolute;
 
 .crud-items {
   margin: 0px 15px;
-  color: gray;
+  color: gray !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,6 +31,7 @@ position: absolute;
 
 .crud-items:hover {
   text-decoration: none;
+  color: black !important;
 }
 
 .preferences {
@@ -47,9 +48,9 @@ padding: 10px;
   color: #e86f6f;
 }
 
-.fa-plus {
-  color: #2a91b3;
-}
+// .fa-plus {
+//   color: #2a91b3;
+// }
 
 .fa-heart {
   color: #88c4e8f7;
