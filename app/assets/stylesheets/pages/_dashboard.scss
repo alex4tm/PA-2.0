@@ -45,6 +45,7 @@
   transform: rotate3d(0, 0, 1, 90deg);
   color: red;
   opacity: 1;
+  outline: none;
 }
 .simple-calendar {
   display: flex;
@@ -67,6 +68,7 @@
 .calendar-main a:hover,
 .calendar-main a:focus {
   color: black !important;
+  outline: none;
 }
 
 .calendar-title {
@@ -87,6 +89,7 @@
 .calendar-main a:nth-of-type(1):focus::before {
   color: white;
   transform: translate(-3px, 0px);
+  outline: none;
 }
 
 .calendar-main a:nth-of-type(2):after {
@@ -103,6 +106,7 @@
 .calendar-main a:nth-of-type(2):focus::after {
   color: white;
   transform: translate(3px, 0px);
+  outline: none;
 }
 
 section.welcome-box {
@@ -145,11 +149,13 @@ font-weight: bold;
   text-decoration: none !important;
   color: black;
   box-shadow: 0px 0px 2px 1px white;
+  outline: none;
 }
 .no-underline:hover,
 .no-underline:focus {
   text-decoration: none !important;
   color: black;
+  outline: none;
 }
 
 #qr-code svg {
