@@ -64,7 +64,8 @@
   text-decoration: none;
 }
 
-.calendar-main a:hover {
+.calendar-main a:hover,
+.calendar-main a:focus {
   color: black !important;
 }
 
@@ -82,7 +83,8 @@
   transition: transform 0.5s ease 0s, opacity 0.2s ease 0s;
 }
 
-.calendar-main a:nth-of-type(1):hover::before {
+.calendar-main a:nth-of-type(1):hover::before,
+.calendar-main a:nth-of-type(1):focus::before {
   color: white;
   transform: translate(-3px, 0px);
 }
@@ -97,7 +99,8 @@
   transition: transform 0.5s ease 0s, opacity 0.2s ease 0s;
 }
 
-.calendar-main a:nth-of-type(2):hover::after {
+.calendar-main a:nth-of-type(2):hover::after,
+.calendar-main a:nth-of-type(2):focus::after {
   color: white;
   transform: translate(3px, 0px);
 }
@@ -137,12 +140,14 @@ font-weight: bold;
   text-decoration: none;
   width: 100%;
 }
-.dash-white-card:hover {
+.dash-white-card:hover,
+.dash-white-card:focus {
   text-decoration: none !important;
   color: black;
   box-shadow: 0px 0px 2px 1px white;
 }
-.no-underline:hover {
+.no-underline:hover,
+.no-underline:focus {
   text-decoration: none !important;
   color: black;
 }

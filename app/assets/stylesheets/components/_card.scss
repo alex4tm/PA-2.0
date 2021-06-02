@@ -29,7 +29,8 @@ position: absolute;
   }
 }
 
-.crud-items:hover {
+.crud-items:hover,
+.crud-items:focus {
   text-decoration: none;
   color: black !important;
 }
