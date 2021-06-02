@@ -83,11 +83,11 @@ ossiano.save!
 User.create!(
   email: "user@gmail.com",
   password: "123456",
-  first_name: "Lexie",
-  last_name: "Vacca",
-  username: "Lexie V.",
+  first_name: "Jane",
+  last_name: "Smith",
+  username: "Jane S.",
   secure_id: "abcd12",
-  phone_number: "+971562721100"
+  phone_number: "+971507207651"
   )
 
 User.create!(
@@ -97,7 +97,7 @@ User.create!(
   last_name: "Iliesi",
   username: "Alex I.",
   secure_id: "",
-  phone_number: "+971507207651",
+  phone_number: "+971507207650",
   restaurant: Restaurant.first
   )
 
