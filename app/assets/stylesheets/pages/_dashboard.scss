@@ -40,7 +40,8 @@
   opacity: 0.5;
 }
 
-.close:hover {
+.close:hover,
+.close:focus {
   transform: rotate3d(0, 0, 1, 90deg);
   color: red;
   opacity: 1;
