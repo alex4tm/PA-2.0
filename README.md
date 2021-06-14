@@ -8,7 +8,7 @@
 <a href="https://youknowme.app/">View live 🚀</a>
 ---
 
-### Table of Contents
+### Table of Contents:
 
 - [Description](#description)
 - [License](#license)
@@ -16,17 +16,33 @@
 
 ---
 
-## Description
+## Description:
 
-This is a slack-like-chat that is buit on Rails, React, authentication using devise gem, PostgreSQL, Redis and action cable for real-time messages.
+This project was made in the week 8 and 9 of the Le Wagon - Dubai Bootcamp , batch #562.
+The project was pitched by me and was chosen as #1 by my fellow colleagues as preference to work on.
 
-#### Technologies
+The initial ideea was to sum up all of the preferences of a certain person (Hotels, Travel, Restaurants, etc) but for the purpose of focusing on a certain part at start we chose to go with the Restaurant and food preferences.
+
+
+## Technologies and tools used:
 
 - Ruby on Rails 
 - Ruby
 - Javascript
 - PostgreSQL
 
+---
+<h5> Authenticaion implemented using devise gem and  </h5>
+
+<h5> Authorization - pundit gem  </h5>
+
+<h5> Booking confirmation done using Twillio - whatsap  </h5>
+
+<h5> Restaurant location implemented with Waze API </h5>
+
+<h5> Image hosting - Cloudinary </h5>
+
+<h5> Bootstrap and Sass for styling </h5>
 
 [⬆ &nbsp; Back To The Top &nbsp; ⬆ ](#youknowme)
 
