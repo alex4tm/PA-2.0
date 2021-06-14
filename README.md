@@ -3,7 +3,7 @@
 <h4>An app that allows you to save all your preferences and dietary requirements and makes it easy to share them with restaurants.</h4>
 
 
-![Project Image](https://github.com/alex4tm/portfolio-v1/blob/master/src/images/youknowmelanding.jpg)
+![Project Image](https://github.com/alex4tm/portfolio-v1/blob/master/src/images/youknowme-landing.jpg)
 ---
 <a href="https://youknowme.app/">View live 🚀</a>
 ---
