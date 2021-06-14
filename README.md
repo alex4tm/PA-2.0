@@ -5,7 +5,7 @@
 
 ![Project Image](https://github.com/alex4tm/portfolio-v1/blob/master/src/images/youknowme-landing.jpg)
 ---
-<a href="https://youknowme.app/">View live 🚀</a>
+<a href="https://youknowme.app/">View live </a>🚀
 ---
 
 ### Table of Contents:
