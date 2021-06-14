@@ -32,6 +32,12 @@ The initial ideea was to sum up all of the preferences of a certain person (Hote
 - PostgreSQL
 
 ---
+
+[Whimsical](https://whimsical.com/pa-2-0-XassrC8Nqp2mZ8WepGbwfW)
+[Trello](https://trello.com/b/ThRUG0aj/pa-20)
+[Figma](https://www.figma.com/file/ixiQVaI1JT1are5JzmVGvf/?node-id=1%3A37)
+
+
 <h5> Authenticaion implemented using devise gem and  </h5>
 
 <h5> Authorization - pundit gem  </h5>
